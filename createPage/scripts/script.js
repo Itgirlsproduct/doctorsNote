@@ -1,4 +1,4 @@
-let table = document.createElement('table');
+/*let table = document.createElement('table');
 let thead = document.createElement('thead');
 let tbody = document.createElement('tbody');
 
@@ -67,4 +67,4 @@ row_3.appendChild(row_3_data_2);
 row_3.appendChild(row_3_data_3);
 row_3.appendChild(row_3_data_4);
 row_3.appendChild(row_3_data_5);
-tbody.appendChild(row_3);
+tbody.appendChild(row_3); */

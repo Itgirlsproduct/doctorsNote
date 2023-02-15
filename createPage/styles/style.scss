@@ -1,3 +1,343 @@
+$var1: #555555;
+$var2: #000000;
+$var3: #5A98F2;
+$var4: #ffffff;
+$var5: #458FF6;
+
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Muli',sans-serif;
+	margin: 0;
+	overflow-x: hidden;
+	position: relative;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+.container {
+	max-width: 1200px;
+	margin: auto;
+	padding: 0 2rem;
+}
+.navbar {
+	padding-top: 2rem;
+	height: 10vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.nav-links {
+	display: flex;
+	li a {
+		color: $var1;
+		padding: 0 1.1rem;
+		&:hover {
+			color: $var2;
+			font-weight: bold;
+		}
+	}
+}
+.hamburger-menu {
+	cursor: pointer;
+	display: none;
+	i {
+		color: $var3;
+	}
+}
+.sidebar {
+	display: none;
+	position: fixed;
+	top: -1rem;
+	left: 0;
+	height: 100%;
+	width: 15rem;
+	background-color: $var3;
+	z-index: 1;
+	i {
+		color: $var4;
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		cursor: pointer;
+	}
+	li a {
+		color: $var4;
+		line-height: 7;
+		font-size: 1.1rem;
+		font-weight: bold;
+		padding: 0 1rem 0 0.5rem;
+	}
+}
+#showcase {
+	height: 90vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.showcase-text {
+	margin-right: 5rem;
+	flex: 3;
+	h1 {
+		font-size: 3rem;
+		width: 90%;
+	}
+	p {
+		width: 80%;
+		opacity: 0.9;
+		line-height: 1.5;
+	}
+}
+.showcase-btn {
+	margin-top: 1rem;
+	border: none;
+	background-color: $var5;
+	color: $var4;
+	border-radius: 20px;
+	padding: 0.8rem 2rem;
+	font-weight: bold;
+	outline: none;
+	cursor: pointer;
+	&:hover {
+		opacity: 0.9;
+	}
+}
+.showcase-img {
+	flex: 4;
+	img {
+		width: 100%;
+	}
+}
+#services {
+	height: 100vh;
+	text-align: center;
+	.cards {
+		display: grid;
+		grid-template-columns: repeat(3,1fr);
+		grid-gap: 2.4rem;
+		h1 {
+			text-align: center;
+		}
+		.card {
+			padding: 3rem 2rem;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+			border-radius: 10px;
+			&:hover {
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+				transform: scale(1.05);
+				overflow: hidden;
+				transition: 0.3s ease all;
+			}
+			h3 {
+				font-size: 1.3rem;
+			}
+			p {
+				opacity: 0.6;
+			}
+		}
+	}
+	.cards {
+		margin-top: 6rem;
+	}
+}
+.service-header {
+	text-align: center;
+	padding: 0 10rem;
+	h1 {
+		font-size: 2.1rem;
+		word-spacing: 4px;
+	}
+	p {
+		opacity: 0.7;
+		line-height: 1.5;
+	}
+}
+hr {
+	width: 4rem;
+	height: 3px;
+	font-weight: bold;
+	background-color: $var2;
+}
+.service-btn {
+	margin: 3rem 0;
+	padding: 0.8rem 3rem;
+	border: 0.1rem solid $var5;
+	border-radius: 20px;
+	background-color: $var4;
+	cursor: pointer;
+	outline: none;
+	color: $var5;
+	font-weight: bold;
+	&:hover {
+		background-color: $var5;
+		color: $var4;
+		transition: all 0.3s ease;
+	}
+}
+#apps {
+	height: 100vh;
+}
+.app-1 {
+	margin: 45rem 0 15rem 0;
+	height: 50vh;
+	display: flex;
+	align-items: center;
+	&-left {
+		flex: 4;
+		img {
+			width: 100%;
+		}
+	}
+	&-right {
+		flex: 3;
+		padding-left: 6rem;
+	}
+}
+.app-2 {
+	height: 50vh;
+	display: flex;
+	align-items: center;
+	&-left {
+		flex: 3;
+		padding-right: 6rem;
+	}
+	&-right img {
+		width: 100%;
+	}
+}
+.app-btn {
+	margin: 3rem 0;
+	padding: 0.8rem 3rem;
+	border: 0.1rem solid $var5;
+	border-radius: 20px;
+	background-color: $var4;
+	cursor: pointer;
+	outline: none;
+	color: $var5;
+	font-weight: bold;
+	&:hover {
+		background-color: $var5;
+		color: $var4;
+		transition: all 0.3s ease;
+	}
+}
+#testimonials {
+	margin-top: 15rem;
+	height: 80vh;
+}
+.testimonial {
+	width: 1100px;
+	text-align: center;
+	max-width: 1100px;
+	margin: auto;
+	background: linear-gradient(to left, #67C3F3, $var3);
+	color: $var4;
+	padding: 3rem 2rem;
+	border-radius: 20px;
+	hr {
+		width: 4rem;
+		height: 3px;
+		font-weight: bold;
+		background-color: $var4;
+	}
+	h2 {
+		font-size: 2rem;
+		word-spacing: 3px;
+	}
+	&-person {
+		display: flex;
+		align-items: center;
+		padding: 2rem;
+	}
+	&-text {
+		flex: 1;
+		line-height: 1.5;
+		p {
+			opacity: 0.9;
+			font-size: 1.05;
+		}
+	}
+}
+.person {
+	display: flex;
+	flex: 1;
+	&-text p {
+		opacity: 0.7;
+		text-align: left;
+	}
+	img {
+		border-radius: 50%;
+		border: 3px solid $var4;
+		margin-right: 2rem;
+	}
+}
+#article {
+	text-align: center;
+	height: 100vh;
+	h1 {
+		font-size: 2rem;
+	}
+	.articleBtn {
+		border: none;
+		background-color: $var4;
+		border: 1px solid $var3;
+		color: $var3;
+		border-radius: 20px;
+		padding: 0.8rem 3rem;
+		margin-top: 3rem;
+		outline: none;
+		cursor: pointer;
+		&:hover {
+			background-color: $var3;
+			color: $var4;
+			transition: all 0.3s ease;
+		}
+	}
+}
+.cards {
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	grid-gap: 2rem;
+	margin-top: 3rem;
+}
+.card {
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	border-radius: 20px;
+	&-img img {
+		width: 100%;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+	}
+	&-text {
+		padding: 0 3rem 1rem 3rem;
+		text-align: left;
+		button {
+			background-color: transparent;
+			border: none;
+			color: $var3;
+			font-weight: bold;
+			font-size: 1rem;
+			margin-top: 1rem;
+		}
+		i {
+			margin-left: 5px;
+		}
+		h1 {
+			line-height: 1.5;
+		}
+		p {
+			line-height: 1.5;
+			opacity: 0.7;
+		}
+	}
+}
+
+
+// стили для таблицы
 $var1: #000000;
 
 table {
@@ -8,3 +348,5 @@ th, td {
 	padding: 10px 20px;
 	border: 1px solid $var1;
 }
+
+

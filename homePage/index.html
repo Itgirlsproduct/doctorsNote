@@ -1,17 +1,161 @@
 <!DOCTYPE html>
 <html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./styles/style.css" />
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./styles/style.css">
-</head>
+	<body>
+		<div class="container">
+			<nav class="navbar">
+				<img
+					src="https://i.ibb.co/BjPPjwP/logo.png"
+					alt="trafalgar"
+					class="logo"
+				/>
+				<ul class="nav-links">
+					<li><a href="#showcase">Home</a></li>
+					<li><a href="#services">For Physicians</a></li>
+					<li><a href="#apps">For Patients</a></li>
+					<li><a href="#testimonials">Testimonials</a></li>
+					<li><a href="#article">About us</a></li>
+				</ul>
+				<div class="hamburger-menu">
+					<i class="fas fa-bars fa-2x" id="open"></i>
+				</div>
+				<ul class="sidebar" id="sidebar">
+					<i class="fas fa-times fa-2x" id="close"></i>
+					<li><a href="#showcase">Home</a></li>
+					<li><a href="#services">For Physicians</a></li>
+					<li><a href="#apps">For Patients</a></li>
+					<li><a href="#testimonials">Testimonials</a></li>
+					<li><a href="#article">About us</a></li>
+				</ul>
+			</nav>
 
-<body>
-    
-    <script src="./scripts/script.js"></script>
-</body>
+			<section id="showcase">
+				<div class="showcase-text">
+					<h1>Virtual healthcare for you</h1>
+					<p>
+						Trafalgar ваш персональный виртуальный помощник в
+						организации и получении медицинской помощи. Больше
+						никакой потери времени на заполнение документов или
+						ожидания приема врача. Наш сервис одновременно полезен
+						для врачей и их пациентов
+					</p>
+					<button class="showcase-btn">Зарегистрироваться</button>
+				</div>
+				<div class="showcase-img">
+					<img
+						src="./pictures/Hero_Image_v4-e1642712819962.png"
+						alt="illustration"
+					/>
+				</div>
+			</section>
 
+			<section id="testimonials">
+				<div class="testimonial">
+					<h2>What our customer are saying</h2>
+					<hr />
+					<div class="testimonial-person">
+						<div class="person">
+							<img
+								src="https://i.ibb.co/CWdSdLS/person.png"
+								alt="person"
+							/>
+							<div class="person-text">
+								<h3>Edward Newgate</h3>
+								<p>Founder Circle</p>
+							</div>
+						</div>
+						<div class="testimonial-text">
+							<p>
+								<i>
+									“Our dedicated patient engagement app and
+									web portal allow you to access information
+									instantaneously (no tedeous form, long
+									calls, or administrative hassle) and
+									securely”
+								</i>
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="article">
+				<h1>Check out our latest article</h1>
+				<hr />
+				<div class="cards">
+					<div class="card">
+						<div class="card-img">
+							<img
+								src="https://i.ibb.co/mtjHwsg/img1.png"
+								alt="img"
+							/>
+						</div>
+						<div class="card-text">
+							<h3>
+								Disease detection, check up in the laboratory
+							</h3>
+							<p>
+								In this case, the role of the health laboratory
+								is very important to do a disease detection...
+							</p>
+							<button class="article-btn">
+								Read More
+								<i class="fas fa-arrow-right"></i>
+							</button>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-img">
+							<img
+								src="https://i.ibb.co/C0b6BWB/img2.png"
+								alt="img"
+							/>
+						</div>
+						<div class="card-text">
+							<h3>
+								Herbal medicines that are safe for consumption
+							</h3>
+							<p>
+								Herbal medicine is very widely used at this time
+								because of its very good for your health...
+							</p>
+							<button class="article-btn">
+								Read More
+								<i class="fas fa-arrow-right"></i>
+							</button>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-img">
+							<img
+								src="https://i.ibb.co/VtHsp41/img3.png"
+								alt="img"
+							/>
+						</div>
+						<div class="card-text">
+							<h3>Natural care for healthy facial skin</h3>
+							<p>
+								A healthy lifestyle should start from now and
+								also for your skin health. There are some...
+							</p>
+							<button class="article-btn">
+								Read More
+								<i class="fas fa-arrow-right"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<button class="articleBtn">View all</button>
+			</section>
+		</div>
+
+		<script src="./scripts/script.js"></script>
+	</body>
 </html>

@@ -1,17 +1,81 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/style.css">
-</head>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
 
-<body>
-
+  <body>
+    <div class="container">
+      <div class="column-1">
+        <div class="app-1">
+          <div class="app-1-left">
+            <form class="form" action="" method="post">
+              <input
+                class="input"
+                type="text"
+                id="name"
+                placeholder="Фамилия, имя*"
+              />
+              <div id="errorMessage"></div>
+              <input
+                class="input"
+                type="email"
+                id="email"
+                placeholder="Ваш e-mail*"
+              />
+              <div id="errorMessage-1"></div>
+              <input
+                class="input"
+                type="tel"
+                id="tel"
+                placeholder="Ваш телефон*"
+              />
+              <div id="errorMessage-2"></div>
+              <span class="custom-dropdown big">
+                <select>
+                  <option>Выберите специализацию</option>
+                  <option>Кардиолог</option>
+                  <option>Эндокринолог</option>
+                  <option>Онколог</option>
+                  <option>Гинеколог</option>
+                  <option>Реабилитолог</option>
+                  <option>Офтальмолог</option>
+                  <option>Отоларинголог</option>
+                  <option>Инфекционист</option>
+                  <option>Пульмонолог</option>
+                  <option>Уролог</option>
+                </select>
+              </span>
+              <div id="errorMessage-3"></div>
+              <input
+                class="input"
+                type="password"
+                id="password"
+                placeholder="Пароль*"
+              />
+              <div id="errorMessage-4"></div>
+              <input
+                class="input"
+                type="password"
+                id="password"
+                placeholder="Повторите пароль*"
+              />
+              <div id="errorMessage-5"></div>
+              <button type="submit" class="app-btn">Зарегистрироваться</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="column-2">
+        <div class="app-1-right">
+          <img src="./pictures/picture_registration.png" alt="picture" />
+        </div>
+      </div>
+    </div>
     <script src="./scripts/script.js"></script>
-</body>
-
+  </body>
 </html>

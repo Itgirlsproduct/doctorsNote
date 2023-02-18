@@ -6,45 +6,51 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<link rel="stylesheet" href="./styles/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 
 	<body>
 		<div class="container">
 			<nav class="navbar">
 				<img
-					src="https://i.ibb.co/BjPPjwP/logo.png"
+					src="pictures/logoheart.png"
 					alt="trafalgar"
 					class="logo"
 				/>
 				<ul class="nav-links">
-					<li><a href="#showcase">Home</a></li>
-					<li><a href="createPage/index.html">For Physicians</a></li>
-					<li><a href="#apps">For Patients</a></li>
-					<li><a href="#testimonials">Testimonials</a></li>
-					<li><a href="#article">About us</a></li>
+					<li><a href="#showcase">Главная</a></li>
+					<li><a href="createPage/index.html">Для доктора</a></li>
+					<li><a href="#apps">Для пациента</a></li>
+					<li><a href="#testimonials">Отзывы</a></li>
+					<li><a href="#article">О нас</a></li>
 				</ul>
 				<div class="hamburger-menu">
 					<i class="fas fa-bars fa-2x" id="open"></i>
 				</div>
 				<ul class="sidebar" id="sidebar">
 					<i class="fas fa-times fa-2x" id="close"></i>
-					<li><a href="#showcase">Home</a></li>
-					<li><a href="createPage/index.html">For Physicians</a></li>
-					<li><a href="#apps">For Patients</a></li>
-					<li><a href="#testimonials">Testimonials</a></li>
-					<li><a href="#article">About us</a></li>
+					<li><a href="#showcase">Главная</a></li>
+					<li><a href="createPage/index.html">Для доктора</a></li>
+					<li><a href="#apps">Для пациента</a></li>
+					<li><a href="#testimonials">Отзывы</a></li>
+					<li><a href="#article">О нас</a></li>
 				</ul>
 			</nav>
 
 			<section id="showcase">
 				<div class="showcase-text">
-					<h1>Virtual healthcare for you</h1>
-					<p>
-						Trafalgar ваш персональный виртуальный помощник в
-						организации и получении медицинской помощи. Больше
-						никакой потери времени на заполнение документов или
-						ожидания приема врача. Наш сервис одновременно полезен
-						для врачей и их пациентов
+					<h1>MedicalNotes</h1>
+					<p class="intro-info">
+						Ваш персональный виртуальный помощник в организации и
+						получении медицинской помощи. Больше никакой потери
+						времени на заполнение документов или ожидания приема
+						врача. Наш сервис одновременно полезен для врачей и их
+						пациентов
 					</p>
 					<button
 						class="showcase-btn"
@@ -54,16 +60,102 @@
 					</button>
 				</div>
 				<div class="showcase-img">
-					<img
-						src="./pictures/Hero_Image_v4-e1642712819962.png"
-						alt="illustration"
-					/>
+					<img src="./pictures/doctors.png" alt="illustration" />
 				</div>
+			</section>
+
+			<section id="services">
+				<div class="service-header">
+					<h1>Наши услуги</h1>
+					<hr />
+					<p>
+						Мы разрабатываем и поставляем программное обеспечение
+						для врачей и их пациентов. Наши услуги позволяют
+						организовывать и хранить данные, необходимые для
+						оперативного и качественного сбора информации и
+						постановки клинических диагнозов. Доверяя нам, вы
+						получаете гарантии безопасности ваших данных и
+						высокотехнологичную помощь.
+					</p>
+				</div>
+				<div class="cards">
+					<div class="card">
+						<img
+							src="https://i.ibb.co/zfyYhmv/Frame1.png"
+							alt="frame"
+						/>
+						<h3>Поиск доктора</h3>
+						<p>
+							В нашей базе Вы сможете подобрать себе доктора по
+							всем важным для Вас критериям. Наши доктора обладают
+							высокой квалификацией и необходимыми практическими
+							навыками
+						</p>
+					</div>
+					<div class="card">
+						<img
+							src="https://i.ibb.co/pLyPsMG/Frame2.png"
+							alt="frame"
+						/>
+						<h3>Электронная аптека</h3>
+						<p>
+							С помощью нашего мобильного приложения вы с
+							легкостью сможете заказывать и оплачивать лекарства,
+							назначенные нашими специалистами
+						</p>
+					</div>
+					<div class="card">
+						<img
+							src="https://i.ibb.co/ph7X1tV/Frame3.png"
+							alt="frame"
+						/>
+						<h3>Консультации</h3>
+						<p>
+							Бесплатные пробные консультации со специалистами из
+							нашей базы
+						</p>
+					</div>
+					<div class="card">
+						<img
+							src="https://i.ibb.co/Xk1zg7f/Frame4.png"
+							alt="frame"
+						/>
+						<h3>Дополнительная информация</h3>
+						<p>
+							Получите направления и рекомендации для дальнейших
+							исследований со скидкой в наших клиниках-партнерах.
+						</p>
+					</div>
+					<div class="card">
+						<img
+							src="https://i.ibb.co/Hr6zdrS/Frame5.png"
+							alt="frame"
+						/>
+						<h3>Срочные консультации</h3>
+						<p>
+							Вы сможете заказать консультацию в любое время суток
+							с доступным врачом для Вас и Вашей семьи
+						</p>
+					</div>
+					<div class="card">
+						<img
+							src="https://i.ibb.co/WHY5Ptg/Frame6.png"
+							alt="frame"
+						/>
+						<h3>История консультаций</h3>
+						<p>
+							Данные о приемах пациентов, их информация остается в
+							базе данных для обеспечения полноценного и
+							качественного анализа истории заболеваний.
+						</p>
+					</div>
+				</div>
+				<button class="service-btn">Подробнее</button>
 			</section>
 
 			<section id="testimonials">
 				<div class="testimonial">
-					<h2>What our customer are saying</h2>
+					<h2>Отзывы наших клиентов</h2>
 					<hr />
 					<div class="testimonial-person">
 						<div class="person">
@@ -92,7 +184,7 @@
 			</section>
 
 			<section id="article">
-				<h1>Check out our latest article</h1>
+				<h1>Последние новости</h1>
 				<hr />
 				<div class="cards">
 					<div class="card">
@@ -110,10 +202,11 @@
 								In this case, the role of the health laboratory
 								is very important to do a disease detection...
 							</p>
-							<button class="article-btn">
-								Read More
+							<div>
+								<a href="" class="article-btn">Подробнее</a>
+
 								<i class="fas fa-arrow-right"></i>
-							</button>
+							</div>
 						</div>
 					</div>
 					<div class="card">
@@ -131,10 +224,11 @@
 								Herbal medicine is very widely used at this time
 								because of its very good for your health...
 							</p>
-							<button class="article-btn">
-								Read More
+							<div>
+								<a href="" class="article-btn">Подробнее</a>
+
 								<i class="fas fa-arrow-right"></i>
-							</button>
+							</div>
 						</div>
 					</div>
 					<div class="card">
@@ -150,14 +244,15 @@
 								A healthy lifestyle should start from now and
 								also for your skin health. There are some...
 							</p>
-							<button class="article-btn">
-								Read More
+							<div>
+								<a href="" class="article-btn">Подробнее</a>
+
 								<i class="fas fa-arrow-right"></i>
-							</button>
+							</div>
 						</div>
 					</div>
 				</div>
-				<button class="articleBtn">View all</button>
+				<button class="articleBtn">Смотреть все</button>
 			</section>
 		</div>
 

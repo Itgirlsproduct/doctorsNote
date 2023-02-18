@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -5,7 +6,9 @@
 }
 
 body {
-  font-family: "Muli", sans-serif;
+  font-family: "Poiret One", sans-serif;
+  font-weight: 800;
+  font-size: 1.2em;
 }
 body #patientContainer {
   display: flex;
@@ -15,7 +18,7 @@ body #patientContainer {
 }
 body .patient {
   width: 300px;
-  height: 350px;
+  height: 400px;
   border: 1px solid rgb(216, 214, 210);
   padding-left: 10px;
   padding-right: 10px;
@@ -25,6 +28,7 @@ body .patient {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   background-color: #c3d6f1;
   font-family: "Muli", sans-serif;
+  font-size: 16px;
   margin: 6px;
   opacity: 85%;
   font-size: 16px;
@@ -56,6 +60,11 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
 }
 
 .nav-links {

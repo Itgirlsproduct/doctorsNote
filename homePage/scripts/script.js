@@ -2,6 +2,7 @@ const open = document.getElementById("open");
 const close = document.getElementById("close");
 const sidebar = document.getElementById("sidebar");
 const loginBtn = document.querySelector(".showcase-btn");
+const newsBtn = document.querySelector(".articleBtn");
 
 const openSidebar = () => {
 	sidebar.style.display = "inline-block";
@@ -33,5 +34,3 @@ $(document).ready(function () {
 		}
 	});
 });
-
-loginBtn.addEventListener("click", function () {});

@@ -40,7 +40,40 @@
 					<li><a href="#testimonials">Отзывы</a></li>
 					<li><a href="#article">О нас</a></li>
 				</ul>
+				<div class="login-btn"><a href="#iw-modal" class="iw-modal-btn">Log in</a></div>
 			</nav>
+			<div id="iw-modal" class="iw-modal">
+				<div class="iw-modal-wrapper">
+				<div class="iw-CSS-modal-inner">
+				<div class="iw-modal-header">
+				<h3 class="iw-modal-title">Авторизация</h3>
+				<a href="#close" title="Закрыть" class="iw-close">×</a>
+				</div>
+				<div class="iw-modal-text">    
+					<form class="form" action="" method="post">
+					<input
+					  class="input input-email"
+					  type="email"
+					  id="email"
+					  placeholder="Ваш e-mail*"
+					/>
+					<div id="errorMessage"></div>
+			  
+					<input
+					  class="input input-pasword"
+					  type="password"
+					  id="password"
+					  placeholder="Пароль*"
+					/>
+					<div id="errorMessage-1"></div>
+					<button type="submit" class="app-btn">Войти</button>
+					<p>Еще не зарегистрированы?</p>
+					<button type="submit" class="app-btn">Зарегистрироваться</button>
+				</form>
+				</div>
+				</div>
+				</div>	
+				</div>
 
 			<section id="showcase">
 				<div class="showcase-text">
@@ -188,7 +221,7 @@
 					<div class="testimonial-person">
 						<div class="person">
 							<img
-								src="pictures/0467bcb4-83cc-407c-9e30-45640d4ecd28.png"
+								src="pictures/testim-woman.png"
 								width="140"
 								height="140"
 								alt="person"
@@ -205,9 +238,34 @@
 						</div>
 					</div>
 				</div>
+				<div class="testimonial">
+					<h2>Отзывы наших клиентов</h2>
+					<hr />
+					<div class="testimonial-person">
+						<div class="person">
+							<img
+								src="pictures/testim-man.png"
+								width="150"
+								height="140"
+								alt="person"
+							/>
+							<div class="person-text">
+								<h3>Bryn Seay</h3>
+								<p>Benefits Manager</p>
+							</div>
+						</div>
+						<div class="testimonial-text">
+							<p>
+								<i> "People have become dependent on this virtual benefit. We have had so much positive feedback that we know we will always have this option available." </i>
+							</p>
+						</div>
+					</div>
+				</div>
 			</div>
-				<div class="testimonial-arrows"><a class="previous-arrow" onclick="previousSlide()">&#10094</a>
-				<a class="next-arrow" onclick="nextSlide()">&#10095</a></div>
+				<div class="testimonial-arrows">
+					<a class="previous-arrow" onclick="previousSlide()">&#10094</a>
+					<a class="next-arrow" onclick="nextSlide()">&#10095</a>
+				</div>
 			</section>
 
 			<section id="article">

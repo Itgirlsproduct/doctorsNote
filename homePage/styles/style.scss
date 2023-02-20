@@ -49,6 +49,7 @@ a{
     padding-top: 2rem;
     height: 10vh;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
@@ -58,9 +59,10 @@ a{
 }
 .nav-links{
     display: flex;
+    
 }
 
-.nav-links li a{
+.nav-links li a, .login-btn a{
     color: #555;
     padding: 0 1.1rem;
 }
@@ -78,7 +80,123 @@ a{
 .hamburger-menu i{
     color: #5A98F2;
 }
+.login-btn {
+    width: 50%;
+    margin-left: auto;
+    text-align: right;
+}
+.iw-modal {
+    opacity: 0; 
+    background: rgba(0,0,0,0.7); 
+    pointer-events: none; 
+    position: fixed; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    transition: all 0.5s ease;
+    margin: 0;
+    padding: 0;
+    }
+    .iw-modal:target {
+    opacity: 1; 
+    pointer-events: auto; 
+    overflow-y: auto; 
+    }
+    .iw-modal-wrapper {
+    margin:auto; 
+    margin-top:25vh; 
+    }
+     
+    .iw-CSS-modal-inner {
+    position: relative;
+    background: #fff; 
+    border: 1px solid #ccc; 
+    border-radius: 0px; 
+    }
+    
+    .iw-modal-header {
+    padding: 15px;
+    background:#f1f1f1;
+    position:relative;
+    }
+    .iw-modal-title {
+    font-size: 18px; 
+    color:#555; 
+    font-weight:bold; 
+    line-height: 1.5; 
+    margin-top: 0;
+    margin-bottom: 0;
+    }
+    /*CSS для кнопки закрытия*/
+    .iw-close {
+    position:absolute;
+    top:15px; 
+    right:10px; 
+    font-size: 24px; 
+    color: #555; 
+    text-decoration: none;
+    }
+    .iw-close:hover, .iw-close:focus {
+    color: #000; 
+    cursor: pointer;
+    }
+    /*CSS для блока с текстом*/
+    .iw-modal-text {
+    padding: 15px 20px; 
+    }
+   
+    @media (min-width: 550px) {
+    .iw-modal-wrapper {
+    max-width: 500px;
+    }
+    }
+    .form {
+        max-width: 370px;
+        padding: 15px;
+        margin: 20px auto;
+        background-color: #fff;
+      }
 
+      .input {
+        display: block;
+        width: 100%;
+        padding: 8px 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-family: inherit;
+        font-size: 16px;
+      }
+
+      .app-btn {
+        display: block;
+        width: 100%;
+        padding: 8px 10px;
+        margin: 2rem 0;
+        border: 0.1rem solid #458ff6;
+        border-radius: 20px;
+        background-color: #fff;
+        cursor: pointer;
+        outline: none;
+        color: #458ff6;
+        font-weight: bold;
+        font-family: inherit;
+        font-size: 16px;
+      }
+
+      .app-btn:hover {
+        background-color: #458ff6;
+        color: #fff;
+        transition: all 0.3s ease;
+      }
+
+      #errorMessage,
+      #errorMessage-1 {
+        height: 1rem;
+        color: red;
+      }
 .sidebar{
     display: none;
     position: fixed;
@@ -304,6 +422,7 @@ hr{
 }
 
 .testimonial{
+    height: 50vh;
     width: 1100px;
     text-align: center;
     max-width: 1100px;
@@ -373,8 +492,17 @@ hr{
     display: flex;
     justify-content: center;
     cursor: pointer;
-    
+    padding-top: 5px;
 }
+.previous-arrow, .next-arrow {
+    width: 4rem;
+    color: #458FF6;
+}
+.previous-arrow:hover:after, .next-arrow:hover:after,
+.previous-arrow:focus:after, .next-arrow:focus:after {
+	width: 0; 
+}
+
 #article{
     text-align: center;
     height: 100vh;

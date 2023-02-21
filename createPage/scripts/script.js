@@ -1,60 +1,28 @@
-let patients = [];
-loadData();
-commentadd.addEventListener('click',() =>{
+document.addEventListener("DOMContentLoaded" ,() => {
+   fetch ("https://randomuser.me/api/?results=15")
+   .then(response=> {
+       return response.json();
+   })
+   .then ((patientdata) =>{
+       let arrayPatients = patientdata.results;
+       let patientContainer = "";
+for (let patient of arrayPatients){
+   patientContainer +=`<div class="patient"><img  class="avatar" src=${patient.picture.large}>
+   <div><strong>Имя:</strong>${patient.name.first}</div>
+       <div><strong>Фамилия:</strong>${patient.name.last}</div>
+       <div><strong>Email:</strong>${patient.email}</div>
+   <div><strong>Адрес:</strong>${patient.location.country}</div>
+   <div><strong>Возраст:</strong>${patient.registered.age}</div>
+   <div><strong>Телефон:</strong>${patient.phone}</div>
 
-   let dataSurname =  document.getElementById('data-surname'); 
-   let dataName = document.getElementById('data-name');
-   let dataLastname = document.getElementById('data-lastname');
-   let dataPhone = document.getElementById('data-phone');
+</div></div>`;
 
-   let patient= {
-    name : dataSurname.value,
-    surname : dataName.value,
-    lastname : dataLastname.value,
-    phone : dataPhone.value,
-    time : Math.floor(Date.now()/1000)
-   }
-   dataSurname.value = '';
-   dataName.value = ''; 
-   dataLastname.value = ''; 
-   dataPhone.value = ''; 
-   patients.push(patient);
-  saveData();
-  showData();
+} 
+document.getElementById("patientContainer").innerHTML = patientContainer;
+
+   })
+.catch(error => console.log(error));
 });
-function saveData(){
-   localStorage.setItem('patients', JSON.stringify(patients)); 
-   showData();
+function onDelete(){
+   document.querySelector("#result").innerHTML = '';
 }
-function loadData() {
-    if (localStorage.getItem('patients')) patients = JSON.parse(localStorage.getItem('patients')) ;
-}
-function showData(){
-   let commentField = document.getElementById('comment-field');
-   let out = '';
-   patients.forEach(function(item){
-out += `<li class="dataPatient"><input type="checkbox" id="todo_1"/>
-<p><em>${item.name}</em></p>
-<p><em>${item.surname}</em></p><p><em>${item.lastname}</em></p><p>${item.phone}</p><p><em>${timeConverter(item.time)}</em></p>  <i class="far fa-trash-alt delete"></i></li>`;
-
-   });
-   commentField.innerHTML = out;
-}
-function timeConverter(UNIX_timestamp ){
-    let a = new Date(UNIX_timestamp * 1000);
-    let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    let year = a.getFullYear();
-    let month = months[a.getMonth()];
-    let date = a.getDate();
-    let hour = a.getHours();
-    let min = a.getMinutes();
-    let sec = a.getSeconds();
-    let time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-    return time;
-
-}
-clearStorage.addEventListener('click',() =>{
-   
-    localStorage.clear();
-   
-})

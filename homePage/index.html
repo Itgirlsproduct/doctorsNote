@@ -40,7 +40,40 @@
 					<li><a href="#testimonials">Отзывы</a></li>
 					<li><a href="#article">О нас</a></li>
 				</ul>
+				<div class="login-btn"><a href="#iw-modal" class="iw-modal-btn">Log in</a></div>
 			</nav>
+			<div id="iw-modal" class="iw-modal">
+				<div class="iw-modal-wrapper">
+				<div class="iw-CSS-modal-inner">
+				<div class="iw-modal-header">
+				<h3 class="iw-modal-title">Авторизация</h3>
+				<a href="#close" title="Закрыть" class="iw-close">×</a>
+				</div>
+				<div class="iw-modal-text">    
+					<form class="form" action="" method="post">
+					<input
+					  class="input input-email"
+					  type="email"
+					  id="email"
+					  placeholder="Ваш e-mail*"
+					/>
+					<div id="errorMessage"></div>
+			  
+					<input
+					  class="input input-pasword"
+					  type="password"
+					  id="password"
+					  placeholder="Пароль*"
+					/>
+					<div id="errorMessage-1"></div>
+					<button type="submit" class="app-btn">Войти</button>
+					<p>Еще не зарегистрированы?</p>
+					<button type="submit" class="app-btn">Зарегистрироваться</button>
+				</form>
+				</div>
+				</div>
+				</div>	
+				</div>
 
 			<section id="showcase">
 				<div class="showcase-text">
@@ -154,6 +187,7 @@
 			</section>
 
 			<section id="testimonials">
+				<div>
 				<div class="testimonial">
 					<h2>Отзывы наших клиентов</h2>
 					<hr />
@@ -181,6 +215,57 @@
 						</div>
 					</div>
 				</div>
+				<div class="testimonial">
+					<h2>Отзывы наших клиентов</h2>
+					<hr />
+					<div class="testimonial-person">
+						<div class="person">
+							<img
+								src="pictures/testim-woman.png"
+								width="140"
+								height="140"
+								alt="person"
+							/>
+							<div class="person-text">
+								<h3>Lucy Garold</h3>
+								<p>Founder Circle</p>
+							</div>
+						</div>
+						<div class="testimonial-text">
+							<p>
+								<i> "We’ve seen in our behavioral health areas that our patients actually engage better with the telehealth technology." </i>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial">
+					<h2>Отзывы наших клиентов</h2>
+					<hr />
+					<div class="testimonial-person">
+						<div class="person">
+							<img
+								src="pictures/testim-man.png"
+								width="150"
+								height="140"
+								alt="person"
+							/>
+							<div class="person-text">
+								<h3>Bryn Seay</h3>
+								<p>Benefits Manager</p>
+							</div>
+						</div>
+						<div class="testimonial-text">
+							<p>
+								<i> "People have become dependent on this virtual benefit. We have had so much positive feedback that we know we will always have this option available." </i>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+				<div class="testimonial-arrows">
+					<a class="previous-arrow" onclick="previousSlide()">&#10094</a>
+					<a class="next-arrow" onclick="nextSlide()">&#10095</a>
+				</div>
 			</section>
 
 			<section id="article">
@@ -196,14 +281,19 @@
 						</div>
 						<div class="card-text">
 							<h3>
-								Disease detection, check up in the laboratory
+								Полезна ли комплексная диагностика организма
 							</h3>
 							<p>
-								In this case, the role of the health laboratory
-								is very important to do a disease detection...
+								По окончании диагностики пациент получает
+								развернутую информацию о состоянии его
+								здоровья...
 							</p>
 							<div>
-								<a href="" class="article-btn">Подробнее</a>
+								<a
+									href="https://spbmz.ru/pages/posts/kompleksnaja-diagnostika-organizma-check-up-1122.php"
+									class="article-btn"
+									>Подробнее</a
+								>
 
 								<i class="fas fa-arrow-right"></i>
 							</div>
@@ -217,15 +307,18 @@
 							/>
 						</div>
 						<div class="card-text">
-							<h3>
-								Herbal medicines that are safe for consumption
-							</h3>
+							<h3>Гомеопатия, безопасная для человека</h3>
 							<p>
-								Herbal medicine is very widely used at this time
-								because of its very good for your health...
+								Гомеопатия часто становится полезной там, где
+								казалось бы уже все шансы на выздоровление
+								потеряны...
 							</p>
 							<div>
-								<a href="" class="article-btn">Подробнее</a>
+								<a
+									href="https://imedic.kiev.ua/statyi/gomeopatiya/427-gomeopatija-osobennosti-gomeopaticheskogo-lechenija"
+									class="article-btn"
+									>Подробнее</a
+								>
 
 								<i class="fas fa-arrow-right"></i>
 							</div>
@@ -239,23 +332,88 @@
 							/>
 						</div>
 						<div class="card-text">
-							<h3>Natural care for healthy facial skin</h3>
+							<h3>
+								Помощники по уходу за кожей лица на основе
+								натуральных ингредиентов
+							</h3>
 							<p>
-								A healthy lifestyle should start from now and
-								also for your skin health. There are some...
+								У натуральной косметики есть свои преимущества:
+								она состоит из органических веществ...
 							</p>
 							<div>
-								<a href="" class="article-btn">Подробнее</a>
+								<a
+									href="https://www.kp.ru/woman/krasota/luchshie-brendy-naturalnoj-kosmetiki/"
+									class="article-btn"
+									>Подробнее</a
+								>
 
 								<i class="fas fa-arrow-right"></i>
 							</div>
 						</div>
 					</div>
 				</div>
-				<button class="articleBtn">Смотреть все</button>
+				<button
+					class="articleBtn"
+					onClick='location.href="https://rg.ru/tema/obshestvo/zdorovje/"'
+				>
+					Смотреть все
+				</button>
 			</section>
+			<footer>
+				<hr />
+				<div class="footer-container">
+					<div class="footer-social">
+						<ul class="foot-socials">
+							<li>
+								<a href="#"
+									><img
+										src="pictures/inst1.svg"
+										alt="inst"
+										width="24"
+								/></a>
+							</li>
+							<li>
+								<a href="#"
+									><img
+										src="pictures/fb.svg"
+										alt="fb"
+										width="24"
+								/></a>
+							</li>
+							<li>
+								<a href="#"
+									><img
+										src="pictures/tw1.svg"
+										alt="tw"
+										width="24"
+								/></a>
+							</li>
+							<li>
+								<a href="#"
+									><img
+										src="pictures/pinterest1.svg"
+										alt="pint"
+										width="24"
+								/></a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer-rights">© Все права защищены 2023</div>
+					<div class="footer-nav">
+						<ul class="foot-nav--list">
+							<li><a href="#showcase">Главная</a></li>
+							<li>
+								<a href="createPage/index.html">Для доктора</a>
+							</li>
+							<li><a href="#apps">Для пациента</a></li>
+							<li><a href="#testimonials">Отзывы</a></li>
+							<li><a href="#article">О нас</a></li>
+						</ul>
+					</div>
+				</div>
+			</footer>
 		</div>
 
-		<script src="./scripts/script.js"></script>
+		<script src="scripts/script.js"></script>
 	</body>
 </html>

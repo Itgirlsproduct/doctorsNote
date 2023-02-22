@@ -65,7 +65,7 @@ function finishTask(sender){
    del =''; 
  }
 function myDelete() {
-dataField.innerHTML ='';
+dataField.innerHTML = '';
 localStorage.clear();
 }
 

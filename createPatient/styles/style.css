@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.date {
+  background-color: #6C717B;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.container .createPatient {
+  background-color: rgb(153, 185, 236);
+  width: 95%;
+  padding: 20px;
+  margin: 10px;
+  margin-top: 100px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.container .createPatient input[type=text] {
+  width: 200px;
+  font-size: 1rem;
+  color: #272523;
+}
+.container #data-field {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.container #data-field .dataPatient {
+  background-color: rgb(191, 207, 232);
+  width: 95%;
+  padding: 20px;
+  margin: 10px;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  opacity: 85%;
+}
+.container #data-field .dataPatient li {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.container #data-field .dataPatient li i {
+  color: #6C717B;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 5px 10px;
+}/*# sourceMappingURL=style.css.map */

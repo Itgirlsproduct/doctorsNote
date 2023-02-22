@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 $var1: #555555;
 $var2: #000000;
 $var3: #5A98F2;
@@ -10,62 +9,52 @@ $var5: #458FF6;
 	margin: 0;
 	box-sizing: border-box;
 }
-
 body {
-	font-family: 'Poiret One', sans-serif;
-	font-weight: 800;
-	font-size: 1.2em;
-
+	font-family: 'Muli',sans-serif;
 	//style for patient
-	#patientContainer {
-		display: flex;
-		justify-content: space-around;
-		flex-wrap: wrap;
-		flex-direction: row;
-	}
+#patientContainer {
+    display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+.patient {
+	width: 300px;
+	height: 350px;
+	border: 1px solid rgb(216, 214, 210);
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 15px;
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	background-color:  #c3d6f1;
+	font-family: 'Muli',sans-serif;
+	margin: 6px;
 
-	.patient {
-		width: 300px;
-		height: 400px;
-		border: 1px solid rgb(216, 214, 210);
-		padding-left: 10px;
-		padding-right: 10px;
-		padding-top: 15px;
-		border-radius: 10px;
-		text-align: center;
-		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-		background-color: #c3d6f1;
-		font-family: 'Muli', sans-serif;
-		font-size: 16px;
-		margin: 6px;
-
-		opacity: 85%;
-		font-size: 16px;
-	}
-
-	.avatar {
-		width: 200px;
-		height: 200px;
-		border-radius: 5px;
-		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-	}
+	opacity: 85%;
+	font-size:16px;
+}
+.avatar {
+	width: 200px;
+	height: 200px;
+	border-radius: 5px;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 
 }
 
+}
 ul {
 	list-style: none;
 }
-
 a {
 	text-decoration: none;
 }
-
 .container {
 	width: 100%;
 	margin: auto;
 	padding: 0 2rem;
 }
-
 .navbar {
 	padding-top: 2rem;
 	height: 10vh;
@@ -73,19 +62,11 @@ a {
 	align-items: center;
 	justify-content: space-between;
 }
-
-.logo {
-	width: 50px;
-	height: 50px;
-}
-
 .nav-links {
 	display: flex;
-
 	li a {
 		color: $var1;
 		padding: 0 1.1rem;
-
 		&:hover {
 			color: $var2;
 			font-weight: bold;
@@ -102,7 +83,6 @@ a {
 	width: 15rem;
 	background-color: $var3;
 	z-index: 1;
-
 	i {
 		color: $var4;
 		position: absolute;
@@ -110,7 +90,6 @@ a {
 		right: 15px;
 		cursor: pointer;
 	}
-
 	li a {
 		color: $var4;
 		line-height: 7;
@@ -119,35 +98,30 @@ a {
 		padding: 0 1rem 0 0.5rem;
 	}
 }
-
 #showcase {
 	width: 100vw;
 	height: 20vh;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-
+	justify-content:space-between;
+	
 }
-
 .showcase-text {
 
 	display: flex;
 	//justify-content: space-between;
 	flex-direction: row;
 	margin: 5px;
-
 	h1 {
 		font-size: 2.5rem;
 		width: 90%;
 	}
-
 	p {
 		width: 90%;
 		opacity: 0.9;
 		line-height: 2;
 	}
 }
-
 .showcase-btn {
 	margin-top: 1.5rem;
 	margin: 25px;
@@ -161,12 +135,10 @@ a {
 	font-weight: bold;
 	outline: none;
 	cursor: pointer;
-
 	&:hover {
 		opacity: 0.9;
 	}
 }
-
 /*.showcase-img {
 	flex: 4;
 	img {
@@ -209,25 +181,21 @@ a {
 .service-header {
 	text-align: center;
 	padding: 0 10rem;
-
 	h1 {
 		font-size: 2.1rem;
 		word-spacing: 4px;
 	}
-
 	p {
 		opacity: 0.7;
 		line-height: 1.5;
 	}
 }
-
 hr {
 	width: 4rem;
 	height: 3px;
 	font-weight: bold;
 	background-color: $var2;
 }
-
 .service-btn {
 	margin: 3rem 0;
 	padding: 0.8rem 3rem;
@@ -238,53 +206,43 @@ hr {
 	outline: none;
 	color: $var5;
 	font-weight: bold;
-
 	&:hover {
 		background-color: $var5;
 		color: $var4;
 		transition: all 0.3s ease;
 	}
 }
-
 #apps {
 	height: 100vh;
 }
-
 .app-1 {
 	margin: 45rem 0 15rem 0;
 	height: 50vh;
 	display: flex;
 	align-items: center;
-
 	&-left {
 		flex: 4;
-
 		img {
 			width: 100%;
 		}
 	}
-
 	&-right {
 		flex: 3;
 		padding-left: 6rem;
 	}
 }
-
 .app-2 {
 	height: 50vh;
 	display: flex;
 	align-items: center;
-
 	&-left {
 		flex: 3;
 		padding-right: 6rem;
 	}
-
 	&-right img {
 		width: 100%;
 	}
 }
-
 .app-btn {
 	margin: 3rem 0;
 	padding: 0.8rem 3rem;
@@ -295,14 +253,12 @@ hr {
 	outline: none;
 	color: $var5;
 	font-weight: bold;
-
 	&:hover {
 		background-color: $var5;
 		color: $var4;
 		transition: all 0.3s ease;
 	}
 }
-
 /*#testimonials {
 	margin-top: 15rem;
 	height: 80vh;
@@ -413,3 +369,6 @@ hr {
 		}
 	}
 }*/
+
+
+

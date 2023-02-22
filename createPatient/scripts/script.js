@@ -1,42 +1,51 @@
-let comments = [];
-loadComments();
-commentadd.addEventListener('click',() =>{
-    event.preventDefault();
-   let commentName =  document.getElementById('comment-name'); 
-   let commentBody = document.getElementById('comment-body').value;
-   let newcommentBody = commentBody.toString().replace(/viagra/gi, '***');
- 
+let patients = [];
+const dataField = document.getElementById('data-field');
+loadData();
+dataAdd.addEventListener('click',() =>{
 
-   let comment = {
-    name : commentName.value,
-    
-    body : newcommentBody,
+   let dataSurname =  document.getElementById('data-surname'); 
+   let dataName = document.getElementById('data-name');
+   let dataLastname = document.getElementById('data-lastname');
+   let dataPhone = document.getElementById('data-phone');
+   let dataEmail = document.getElementById('data-email');
+
+   let patient= {
+    name : dataSurname.value,
+    surname : dataName.value,
+    lastname : dataLastname.value,
+    phone : dataPhone.value,
+    email : dataEmail.value,
     time : Math.floor(Date.now()/1000)
    }
-   commentName.value = '';
-   newcommentBody.value = ''; 
-   comments.push(comment);
-  saveComments();
-  showComments();
+   dataSurname.value = '';
+   dataName.value = ''; 
+   dataLastname.value = ''; 
+   dataPhone.value = ''; 
+   dataEmail.value = ''; 
+   patients.push(patient);
+  saveData();
+  showData();
+  
 });
-function saveComments(){
-   localStorage.setItem('comments', JSON.stringify(comments)); 
-   showComments();
+function saveData(){
+   localStorage.setItem('patients', JSON.stringify(patients)); 
+   showData();
 }
-function loadComments() {
-    if (localStorage.getItem('comments')) comments = JSON.parse(localStorage.getItem('comments')) ;
+function loadData() {
+    if (localStorage.getItem('patients')) patients = JSON.parse(localStorage.getItem('patients')) ;
 }
-function showComments(){
-   let commentField = document.getElementById('comment-field');
+function showData(){
+  
    let out = '';
-   comments.forEach(function(item){
-out += `<p class="text-right small"><em>${timeConverter(item.time)}</em></p>`;
-out += `<p class="alert alert-primary">${item.name}</p>`;
-out += `<p class="alert alert-secondary">${item.body}</p>`;
-
-   });
-   commentField.innerHTML = out;
+   patients.forEach(function(item){
+    
+out += `<ul><div class="dataPatient"><i class="far fa-trash-alt delete" onclick="finishTask(this)" ></i> 
+<p><em>${item.name}</em></p>
+<p><em>${item.surname}</em></p><p><em>${item.lastname}</em></p><p>${item.phone}</p><p>${item.email}</p><p><em>${timeConverter(item.time)}</em></p></div></ul>`;
+});
+   dataField.innerHTML = out;
 }
+
 function timeConverter(UNIX_timestamp ){
     let a = new Date(UNIX_timestamp * 1000);
     let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -50,3 +59,14 @@ function timeConverter(UNIX_timestamp ){
     return time;
 
 }
+function finishTask(sender){
+   let del = sender.parentElement;
+   del.parentNode.parentNode.removeChild(del.parentNode);
+   del =''; 
+ }
+function myDelete() {
+dataField.innerHTML ='';
+localStorage.clear();
+}
+
+   

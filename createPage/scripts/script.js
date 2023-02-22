@@ -1,13 +1,13 @@
-document.addEventListener("DOMContentLoaded" ,() => {
-   fetch ("https://randomuser.me/api/?results=15")
-   .then(response=> {
-       return response.json();
-   })
-   .then ((patientdata) =>{
-       let arrayPatients = patientdata.results;
-       let patientContainer = "";
-for (let patient of arrayPatients){
-   patientContainer +=`<div class="patient"><img  class="avatar" src=${patient.picture.large}>
+document.addEventListener("DOMContentLoaded", () => {
+   fetch("https://randomuser.me/api/?results=15")
+      .then(response => {
+         return response.json();
+      })
+      .then((patientdata) => {
+         let arrayPatients = patientdata.results;
+         let patientContainer = "";
+         for (let patient of arrayPatients) {
+            patientContainer += `<div class="patient"><img  class="avatar" src=${patient.picture.large}>
    <div><strong>Имя:</strong>${patient.name.first}</div>
        <div><strong>Фамилия:</strong>${patient.name.last}</div>
        <div><strong>Email:</strong>${patient.email}</div>
@@ -17,12 +17,13 @@ for (let patient of arrayPatients){
 
 </div></div>`;
 
-} 
-document.getElementById("patientContainer").innerHTML = patientContainer;
+         }
+         document.getElementById("patientContainer").innerHTML = patientContainer;
 
-   })
-.catch(error => console.log(error));
+      })
+      .catch(error => console.log(error));
 });
-function onDelete(){
+
+function onDelete() {
    document.querySelector("#result").innerHTML = '';
 }

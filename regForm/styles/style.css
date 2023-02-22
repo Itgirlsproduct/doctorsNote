@@ -177,7 +177,7 @@ body{
     transition: all 0.3s ease;
 }
 
-  #errorMessage, #errorMessage-1, #errorMessage-2, #errorMessage-3, #errorMessage-4 {
+ .errors {
     height: 1rem;
     color: red;
   }

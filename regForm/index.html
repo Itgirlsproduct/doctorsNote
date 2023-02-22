@@ -13,31 +13,36 @@
       <div class="column-1">
         <div class="app-1">
           <div class="app-1-left">
-            <form class="form" action="" method="get">
+            <form class="form novalidate" action="" method="post" id="add-form">
               <input
                 class="input"
                 type="text"
                 id="name"
+                name="name"
                 placeholder="Фамилия, имя*"
               />
-              <div id="errorMessage"></div>
+              <div class="errors"></div>
               <input
+                class="input input-email"
                 class="input input-email"
                 type="email"
                 id="email"
+                name="email"
                 placeholder="Ваш e-mail*"
               />
-              <div id="errorMessage-1"></div>
+              <div class="errors"></div>
               <input
+                class="input input-phone"
                 class="input input-phone"
                 type="tel"
                 id="tel"
+                name="phone"
                 placeholder="Ваш телефон*"
               />
-              <div id="errorMessage-2"></div>
+              <div class="errors"></div>
               <span class="custom-dropdown big">
                 <select>
-                  <option>Выберите специализацию</option>
+                  <option required>Выберите специализацию</option>
                   <option>Кардиолог</option>
                   <option>Эндокринолог</option>
                   <option>Онколог</option>
@@ -50,21 +55,25 @@
                   <option>Уролог</option>
                 </select>
               </span>
-              <div id="errorMessage-3"></div>
+              <div class="errors"></div>
               <input
+                class="input input-password"
                 class="input input-password"
                 type="password"
                 id="password"
+                name="password"
                 placeholder="Пароль*"
               />
-              <div id="errorMessage-4"></div>
+              <div class="errors"></div>
               <input
+                class="input input-password2"
                 class="input input-password2"
                 type="password"
                 id="password2"
+                name="password2"
                 placeholder="Повторите пароль*"
               />
-              <div id="errorMessage-5"></div>
+              <div class="errors"></div>
               <button type="submit" class="app-btn">Зарегистрироваться</button>
             </form>
           </div>
@@ -76,6 +85,7 @@
         </div>
       </div>
     </div>
+    <script src="scripts/script.js"></script>
     <script src="scripts/script.js"></script>
   </body>
 </html>

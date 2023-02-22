@@ -1,89 +1,173 @@
-let form = document.getElementById('form'),
-    name = document.getElementById('name'),
-    email = document.getElementById('email'),
-    phone = document.getElementById('tel'),
-    password = document.getElementById('password'),
-    password2 = document.getElementById('password2');
-const formAdd=true;    
+document.addEventListener("DOMContentLoaded", () => {
+    "use strict";
 
+    const form = document.querySelector('form');
+    const pass = form.querySelector(".input-password");
+    const pass2 = form.querySelector(".input-password2");
+    let isValidate = false;
 
+    const regExpName = /^([a-zа-яё]+[\s]{0,1}[a-zа-яё]+[\s]{0,1}[a-zа-яё]+)$/ig;
+    const regExpEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const regExpPass = /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}\$/;   
 
+    const submit = () => {
+        alert("Добро пожаловать!");
+    }
 
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const passedChecks = checkInputs();
-        let user = {
-          name: document.getElementById("name").value,
-          email: document.getElementById("email").value,
-          tel: document.getElementById("tel").value,
-          pass: document.getElementById('password'),
-          pass2: document.getElementById('password2')
-        }});
-      //  fetch("https://httpbin.org/post", {
-       //   method: "POST",
-       //   body: JSON.stringify(user),
-      //    headers: {
-      //      "Content-Type": "application/json; charset=utf-8",
-      //    },
-      //  })
-      //    .then((response) => response.json())
-      //    .then((user) => {
-      //      console.log(user);
-      //    })
-      //    .catch((error) => console.log(error));
-     // });
+    const maskPhone = () => {
+        const inputsPhone = document.querySelectorAll('input[name="phone"]');
 
-      function checkInputs() {
-        const nameValue = name.value.trim();
-        const emailValue = email.value.trim();
-        const telValue = tel.value.trim();
-        const passwordValue = password.value.trim();
+        inputsPhone.forEach((input) => {
+            let keyCode;
 
-        if (nameValue === "") {
-          setErrorFor(name, "Имя пользователя не заполнено");
-        } else {
-          setSuccessFor(name);
+            const mask = (even) => {
+                even.keyCode && (keyCode = even.keyCode);
+                let pos = input.selectionStart;
+
+                if(pos < 3) {
+                    even.preventDefault();
+                }
+                let matrix = "+7 (___) ___ ____",
+                i = 0,
+                def = matrix.replace(/\D/g, ""),
+                val = input.value.replace(/\D/g, ""),
+                newValue = matrix.replace(/[_\d]/g, (a) => {
+                    if(i < val.length) {
+                        return val.charAt(i++) || def.charAt(i);
+                    } else {
+                    return a;
+                }
+                });
+                i = newValue.indexOf("_");
+
+                if(i != -1) {
+                    i < 5 && (i = 3);
+                    newValue = newValue.slice(0, i);
+                }
+                let reg = matrix
+                .substr(0, input.value.length)
+                .replace(/_+/g, (a) => {
+                    return "\\d{1, " + a.length + "}";
+                })
+                .replace(/[+()]/g, "\\$&");
+                reg = new RegExp("^" + reg + "$");
+                if(
+                    !reg.test(input.value) ||
+                    input.value.length < 5 ||
+                    (keyCode > 47 && keyCode < 58)
+                ) {
+                    input.value = newValue;
+                }
+                if(even.type === 'blur' && input.value.length < 5) {
+                    input.value = "";
+                }
+            };
+
+            input.addEventListener("input", mask, false);
+            input.addEventListener("focus", mask, false);
+            input.addEventListener("blur", mask, false);
+            input.addEventListener("keydown", mask, false);
+            });
+        };
+maskPhone();
+
+    const validateElem = (elem) => {
+        if(elem.name === "name") {
+            if(!regExpName.test(elem.value) && elem.value != "") {
+                elem.nextElementSibling.textContent = "Введите корректное имя пользователя!";
+            } else {
+                elem.nextElementSibling.textContent = "";
+                isValidate = true;
+            }
         }
-
-        if (emailValue === "") {
-          setErrorFor(email, "Email не заполнен");
-        } else if (!isEmail(emailValue)) {
-          setErrorFor(email, "Ошибка в email");
-        } else {
-          setSuccessFor(email);
+        if(elem.name === "email") {
+                if(!regExpEmail.test(elem.value) && elem.value != "") {
+                    elem.nextElementSibling.textContent = "Введите корректный email!";
+                    isValidate = false;
+                } else {
+                    elem.nextElementSibling.textContent = "";
+                    isValidate = true;
+                }
         }
-        if (telValue === "") {
-            setErrorFor(tel, "Введите номер телефона");
-          } else {
-            setSuccessFor(tel);
-          }
+    
+        if(elem.name === "password") {
+                if(!regExpPass.test(elem.value) && elem.value != "") {
+                    elem.nextElementSibling.textContent = "Введите корректный пароль!";
+                    isValidate = false;
+                } else {
+                    elem.nextElementSibling.textContent = "";
+                    isValidate = true;
+                }
+            }
+        if(elem.name === "password") {
+            if(pass.value != pass2.value && pass2.value != '') {
+                pass.nextElementSibling.textContent = "Пароли не совпадают!";
+                pass2.nextElementSibling.textContent = "Пароли не совпадают!";
+                isValidate = false;
+            } else {
+                pass.nextElementSibling.textContent = "";
+                pass2.nextElementSibling.textContent = "";
+                isValidate = true;
+            }
 
-        if (passwordValue === "") {
-          setErrorFor(password, "Пароль не заполнен");
-        } else {
-          setSuccessFor(password);
+            if(!regExpPass.test(elem.value) && elem.value != "") {
+                elem.nextElementSibling.textContent = "Введите корректный пароль!";
+                isValidate = false;
+            } else {
+                elem.nextElementSibling.textContent = "";
+                isValidate = true;
+            }   
         }
-
-        if (password2Value === "") {
-          setErrorFor(password2, "Пароль не заполнен");
-        } else if (passwordValue !== password2Value) {
-          setErrorFor(password2, "Пароли не совпадают");
-        } else {
-          setSuccessFor(password2);
+    
+        if(elem.name === "password2") {
+            if(pass.value != pass2.value && pass2.value != '') {
+                pass.nextElementSibling.textContent = "Пароли не совпадают!";
+                pass2.nextElementSibling.textContent = "Пароли не совпадают!";
+                isValidate = false;
+            } else {
+                pass.nextElementSibling.textContent = "";
+                pass2.nextElementSibling.textContent = "";
+                isValidate = true;
+            }
         }
-      }
+        };
 
-      function setErrorFor(input, message) {
-        const formControl = input.parentElement;
-        const small = formControl.querySelector("small");
-        formControl.className = "form-control error";
-        small.innerText = message;
-      }
+    for(let elem of form.elements) {
+        if(!elem.classList.contains("input input-phone") && elem.tagName != 'BUTTON' && elem.tagName !='SELECT') 
+        {
+            elem.addEventListener('blur', () => {
+                validateElem(elem);
+            });
+        }
+    }
+ 
 
-      function setSuccessFor(input) {
-        const formControl = input.parentElement;
-        formControl.className = "form-control success";
-      }
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        for(let elem of form.elements) {
+            if(!elem.classList.contains("input input-phone") && elem.tagName != 'BUTTON' && elem.tagName !='SELECT') 
+            {
+                if(elem.value === '') {
+                  elem.nextElementSibling.textContent = 'Данное поле не заполнено!';
+                  isValidate = false;
+                } else {
+                  elem.nextElementSibling.textContent = '';  
+                  isValidate = true;
+                }
+            }
+        }
+    if(isValidate) {
+        //if(form.querySelector('.custom-dropdown big').value) {
+        submit();
+        form.reset();
+    } else {
+        alert('Выберите специализацию');
+    }
+     
+
+    });
+});
 
       function isEmail(email) {
         return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(

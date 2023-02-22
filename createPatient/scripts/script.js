@@ -7,7 +7,7 @@ dataAdd.addEventListener('click',() =>{
    let dataName = document.getElementById('data-name');
    let dataLastname = document.getElementById('data-lastname');
    let dataPhone = document.getElementById('data-phone');
-   let dataEmail = document.getElementById('data-email');
+   let dataEmail =document.getElementById('data-email');
 
    let patient= {
     name : dataSurname.value,

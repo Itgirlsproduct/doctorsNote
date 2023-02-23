@@ -5,7 +5,7 @@ const loginBtn = document.querySelector(".showcase-btn");
 const newsBtn = document.querySelector(".articleBtn");
 
 const openSidebar = () => {
-	sidebar.style.display = "inline-block";
+	sidebar.style.display = "block";
 };
 
 const closeSidebar = () => {

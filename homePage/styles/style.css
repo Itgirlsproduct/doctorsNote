@@ -25,6 +25,13 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+  position: relative;
+}
+a:hover:after, a:focus:after {
+  width: 100%;
+}
 a:after {
   display: block;
   position: absolute;
@@ -35,15 +42,9 @@ a:after {
   content: "";
   transition: width 0.3s ease-out;
 }
-
-a:hover:after,
-a:focus:after {
-  width: 100%;
-}
-
-a {
-  text-decoration: none;
-  position: relative;
+.nav-links li a, .login-btn a {
+  color: #555;
+  padding: 0 1.1rem;
 }
 
 .container {
@@ -69,12 +70,6 @@ a {
 .nav-links {
   display: flex;
 }
-
-.nav-links li a, .login-btn a {
-  color: #555;
-  padding: 0 1.1rem;
-}
-
 .nav-links li a:hover {
   color: #000;
   font-weight: bold;
@@ -84,7 +79,6 @@ a {
   cursor: pointer;
   display: none;
 }
-
 .hamburger-menu i {
   color: #6588b9;
 }
@@ -208,6 +202,11 @@ a {
   transition: all 0.3s ease;
 }
 
+.log-in_error {
+  display: none;
+  color: #f30101;
+}
+
 #errorMessage,
 #errorMessage-1 {
   height: 1rem;
@@ -224,7 +223,6 @@ a {
   background-color: #5A98F2;
   z-index: 1;
 }
-
 .sidebar i {
   color: #fff;
   position: absolute;
@@ -232,7 +230,6 @@ a {
   right: 15px;
   cursor: pointer;
 }
-
 .sidebar li a {
   color: #fff;
   line-height: 7;
@@ -251,7 +248,6 @@ a {
 .showcase-text {
   width: 40vw;
 }
-
 .showcase-text h1 {
   font-size: 3rem;
   width: 90%;
@@ -280,7 +276,6 @@ a {
   font-family: "Montserrat Alternates", sans-serif;
   cursor: pointer;
 }
-
 .showcase-btn:hover {
   opacity: 0.9;
 }
@@ -288,7 +283,6 @@ a {
 .showcase-img {
   flex: 4;
 }
-
 .showcase-img img {
   width: 90%;
 }
@@ -303,10 +297,13 @@ a {
   text-align: center;
   padding: 0 10rem;
 }
-
 .service-header h1 {
   font-size: 2.1rem;
   word-spacing: 4px;
+}
+.service-header p {
+  opacity: 0.7;
+  line-height: 1.5;
 }
 
 hr {
@@ -316,42 +313,29 @@ hr {
   background-color: #000;
 }
 
-.service-header p {
-  opacity: 0.7;
-  line-height: 1.5;
-}
-
 #services .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2.4rem;
+  margin-top: 6rem;
 }
-
 #services .cards h1 {
   text-align: center;
 }
-
-#services .cards {
-  margin-top: 6rem;
-}
-
 #services .cards .card {
   padding: 3rem 2rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
-
 #services .cards .card:hover {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
   overflow: hidden;
   transition: 0.3s ease all;
 }
-
 #services .cards .card h3 {
   font-size: 1.3rem;
 }
-
 #services .cards .card p {
   opacity: 0.6;
 }
@@ -369,7 +353,6 @@ hr {
   font-weight: 700;
   font-size: 1.1rem;
 }
-
 .service-btn:hover {
   background-color: #6588b9;
   color: #fff;
@@ -392,14 +375,12 @@ hr {
   padding: 3rem 2rem;
   border-radius: 20px;
 }
-
 .testimonial hr {
   width: 4rem;
   height: 3px;
   font-weight: bold;
   background-color: #fff;
 }
-
 .testimonial h2 {
   font-size: 2rem;
   word-spacing: 3px;
@@ -415,23 +396,21 @@ hr {
   display: flex;
   flex: 1;
 }
-
-.person-text p {
-  opacity: 0.7;
-  text-align: left;
-}
-
 .person img {
   border-radius: 50%;
   border: 3px solid #fff;
   margin-right: 2rem;
 }
 
+.person-text p {
+  opacity: 0.7;
+  text-align: left;
+}
+
 .testimonial-text {
   flex: 1;
   line-height: 1.5;
 }
-
 .testimonial-text p {
   opacity: 0.9;
   font-size: 1.05;
@@ -441,7 +420,6 @@ hr {
   animation-name: fade;
   animation-duration: 1.5s;
 }
-
 @keyframes fade {
   from {
     opacity: 0.4;
@@ -473,7 +451,6 @@ hr {
   height: -moz-fit-content;
   height: fit-content;
 }
-
 #article h1 {
   font-size: 2rem;
 }
@@ -500,7 +477,6 @@ hr {
   padding: 0 3rem 1rem 3rem;
   text-align: left;
 }
-
 .card-text button {
   background-color: transparent;
   border: none;
@@ -509,15 +485,12 @@ hr {
   font-size: 1rem;
   margin-top: 1rem;
 }
-
 .card-text i {
   margin-left: 5px;
 }
-
 .card-text h1 {
   line-height: 1.5;
 }
-
 .card-text p {
   line-height: 1.5;
   opacity: 0.7;
@@ -541,7 +514,6 @@ hr {
   font-weight: 700;
   cursor: pointer;
 }
-
 #article .articleBtn:hover {
   background-color: #6588b9;
   color: #fff;
@@ -610,13 +582,6 @@ footer hr {
     order: 2;
     padding: 0 2rem;
   }
-  #showcase {
-    width: 100%;
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   .showcase-text h1 {
     font-size: 3rem;
     width: 100%;
@@ -626,6 +591,13 @@ footer hr {
     opacity: 0.9;
     line-height: 1.5;
     font-size: 1.1rem;
+  }
+  #showcase {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .showcase-btn:hover {
     opacity: 0.9;
@@ -644,13 +616,13 @@ footer hr {
     margin-top: 8rem;
     margin-bottom: 25rem;
   }
-  .service-header {
-    padding: 0 2rem;
-  }
   #services .cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2.4rem;
+  }
+  .service-header {
+    padding: 0 2rem;
   }
   .service-btn {
     margin: 3rem 0;
@@ -715,7 +687,7 @@ footer hr {
     margin-top: 1rem;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) and (max-width: 600px) {
   .logo {
     display: none;
   }

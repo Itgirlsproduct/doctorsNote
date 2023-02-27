@@ -5,13 +5,44 @@ $var4: #ffffff;
 $var5: #458FF6;
 
 * {
+	padding: 0;
+	margin: 0;
 	box-sizing: border-box;
 }
 body {
 	font-family: 'Muli',sans-serif;
-	margin: 0;
-	overflow-x: hidden;
-	position: relative;
+	//style for patient
+#patientContainer {
+    display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+.patient {
+	width: 300px;
+	height: 350px;
+	border: 1px solid rgb(216, 214, 210);
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 15px;
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	background-color:  #c3d6f1;
+	font-family: 'Muli',sans-serif;
+	margin: 6px;
+
+	opacity: 85%;
+	font-size:16px;
+}
+.avatar {
+	width: 200px;
+	height: 200px;
+	border-radius: 5px;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+}
+
 }
 ul {
 	list-style: none;
@@ -20,7 +51,7 @@ a {
 	text-decoration: none;
 }
 .container {
-	max-width: 1200px;
+	width: 100%;
 	margin: auto;
 	padding: 0 2rem;
 }
@@ -42,13 +73,7 @@ a {
 		}
 	}
 }
-.hamburger-menu {
-	cursor: pointer;
-	display: none;
-	i {
-		color: $var3;
-	}
-}
+
 .sidebar {
 	display: none;
 	position: fixed;
@@ -74,26 +99,34 @@ a {
 	}
 }
 #showcase {
-	height: 90vh;
+	width: 100vw;
+	height: 20vh;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content:space-between;
+	
 }
 .showcase-text {
-	margin-right: 5rem;
-	flex: 3;
+
+	display: flex;
+	//justify-content: space-between;
+	flex-direction: row;
+	margin: 5px;
 	h1 {
-		font-size: 3rem;
+		font-size: 2.5rem;
 		width: 90%;
 	}
 	p {
-		width: 80%;
+		width: 90%;
 		opacity: 0.9;
-		line-height: 1.5;
+		line-height: 2;
 	}
 }
 .showcase-btn {
-	margin-top: 1rem;
+	margin-top: 1.5rem;
+	margin: 25px;
+	height: 3.5rem;
+	padding-left: 10px;
 	border: none;
 	background-color: $var5;
 	color: $var4;
@@ -106,16 +139,17 @@ a {
 		opacity: 0.9;
 	}
 }
-.showcase-img {
+/*.showcase-img {
 	flex: 4;
 	img {
 		width: 100%;
 	}
-}
-#services {
+}*/
+/*#services {
 	height: 100vh;
+	display: flex;
 	text-align: center;
-	.cards {
+	/*.cards {
 		display: grid;
 		grid-template-columns: repeat(3,1fr);
 		grid-gap: 2.4rem;
@@ -142,8 +176,8 @@ a {
 	}
 	.cards {
 		margin-top: 6rem;
-	}
-}
+	}*/
+
 .service-header {
 	text-align: center;
 	padding: 0 10rem;
@@ -225,7 +259,7 @@ hr {
 		transition: all 0.3s ease;
 	}
 }
-#testimonials {
+/*#testimonials {
 	margin-top: 15rem;
 	height: 80vh;
 }
@@ -275,7 +309,7 @@ hr {
 		margin-right: 2rem;
 	}
 }
-#article {
+/*#article {
 	text-align: center;
 	height: 100vh;
 	h1 {
@@ -298,7 +332,7 @@ hr {
 		}
 	}
 }
-.cards {
+/*.cards {
 	display: grid;
 	grid-template-columns: repeat(3,1fr);
 	grid-gap: 2rem;
@@ -334,19 +368,7 @@ hr {
 			opacity: 0.7;
 		}
 	}
-}
+}*/
 
-
-// стили для таблицы
-$var1: #000000;
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-th, td {
-	padding: 10px 20px;
-	border: 1px solid $var1;
-}
 
 

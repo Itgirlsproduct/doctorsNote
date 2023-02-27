@@ -11,8 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const regExpPass = /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}\$/;   
     const regExpPhone = /^(\+7|7|8)?[\s\-]?\(?[0-9]{3}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
 
-
-
+    
     const submit = () => {
         alert("Добро пожаловать!");
     };
@@ -139,9 +138,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 });
-
-      function isEmail(email) {
-        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-          email
-        );
-      }

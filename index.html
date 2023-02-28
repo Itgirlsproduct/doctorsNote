@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		<link rel="stylesheet" href="./styles/style.css" />
+		<title>MedicalNotes</title>
+		<link rel="stylesheet" href="homePage/styles/style.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -18,13 +18,13 @@
 		<div class="container">
 			<nav class="navbar">
 				<img
-					src="pictures/logoheart.png"
+					src="homePage/pictures/logoheart.png"
 					alt="trafalgar"
 					class="logo"
 				/>
 				<ul class="nav-links">
 					<li><a href="#showcase">Главная</a></li>
-					<li><a href="/createPatient/index.html">Для доктора</a></li>
+					<li><a href="/regForm/index.html">Для доктора</a></li>
 					<li><a href="/createPage/index.html">Пациенты</a></li>
 					<li><a href="#testimonials">Отзывы</a></li>
 					<li><a href="#article">О нас</a></li>
@@ -36,9 +36,9 @@
 				<ul class="sidebar" id="sidebar">
 					<i class="fas fa-times fa-2x" id="close"></i>
 					<li><a href="#showcase">Главная</a></li>
-					<li><a href="createPage/index.html">Для доктора</a></li>
+					<li><a href="regForm/index.html">Для доктора</a></li>
 					<li><a href="#apps">Для пациента</a></li>
-					<li><a href="#testimonials">Отзывы</a></li>
+					<li><a href="#services">Услуги</a></li>
 					<li><a href="#article">О нас</a></li>
 				</ul>
 				<div class="login-btn"><a href="#iw-modal" class="iw-modal-btn">Log in</a></div>
@@ -53,8 +53,8 @@
 				<div class="iw-modal-text">    
 					<form class="form" action="" method="post">
 					<input
-					  class="input input-email"
-					  type="email"
+				      class="input input-email"
+				      type="email"
 					  id="email"
 					  placeholder="Ваш e-mail*"
 					/>
@@ -67,15 +67,16 @@
 					  placeholder="Пароль*"
 					/>
 					<div id="errorMessage-1"></div>
-					<button type="submit" class="app-btn">Войти</button>
+					<button type="button" class="app-btn" id="log-btn">Войти</button>
+					<div class="log-in_error">Логин или пароль не зарегистрирован</div>
 					<p>Еще не зарегистрированы?</p>
-					<button type="submit" class="app-btn">Зарегистрироваться</button>
+					<button type="button" class="app-btn" id="reg-btn">Зарегистрироваться</button>
 				</form>
 				</div>
 				</div>
 				</div>	
 				</div>
-
+				
 			<section id="showcase">
 				<div class="showcase-text">
 					<h1>MedicalNotes</h1>
@@ -94,7 +95,7 @@
 					</button>
 				</div>
 				<div class="showcase-img">
-					<img src="./pictures/doctors.png" alt="illustration" />
+					<img src="homePage/pictures/doctors.png" alt="illustration" />
 				</div>
 			</section>
 
@@ -222,7 +223,7 @@
 					<div class="testimonial-person">
 						<div class="person">
 							<img
-								src="pictures/testim-woman.png"
+								src="homepage/pictures/testim-woman.png"
 								width="140"
 								height="140"
 								alt="person"
@@ -245,7 +246,7 @@
 					<div class="testimonial-person">
 						<div class="person">
 							<img
-								src="pictures/testim-man.png"
+								src="homePage/pictures/testim-man.png"
 								width="150"
 								height="140"
 								alt="person"
@@ -368,7 +369,7 @@
 							<li>
 								<a href="#"
 									><img
-										src="pictures/inst1.svg"
+										src="homePage/pictures/inst1.svg"
 										alt="inst"
 										width="24"
 								/></a>
@@ -376,7 +377,7 @@
 							<li>
 								<a href="#"
 									><img
-										src="pictures/fb.svg"
+										src="homePage/pictures/fb.svg"
 										alt="fb"
 										width="24"
 								/></a>
@@ -384,7 +385,7 @@
 							<li>
 								<a href="#"
 									><img
-										src="pictures/tw1.svg"
+										src="homePage/pictures/tw1.svg"
 										alt="tw"
 										width="24"
 								/></a>
@@ -392,7 +393,7 @@
 							<li>
 								<a href="#"
 									><img
-										src="pictures/pinterest1.svg"
+										src="homePage/pictures/pinterest1.svg"
 										alt="pint"
 										width="24"
 								/></a>
@@ -404,9 +405,9 @@
 						<ul class="foot-nav--list">
 							<li><a href="#showcase">Главная</a></li>
 							<li>
-								<a href="createPage/index.html">Для доктора</a>
+								<a href="/regForm/index.html">Для доктора</a>
 							</li>
-							<li><a href="#apps">Для пациента</a></li>
+							<li><a href="/createPage/index.html">Для пациента</a></li>
 							<li><a href="#testimonials">Отзывы</a></li>
 							<li><a href="#article">О нас</a></li>
 						</ul>
@@ -414,7 +415,7 @@
 				</div>
 			</footer>
 		</div>
-
-		<script src="scripts/script.js"></script>
+		<script src="https://kit.fontawesome.com/78dec00433.js" crossorigin="anonymous"></script>
+		<script src="homePage/scripts/script.js"></script>
 	</body>
 </html>

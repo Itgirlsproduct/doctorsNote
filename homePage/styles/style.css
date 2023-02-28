@@ -558,6 +558,9 @@ footer hr {
   justify-content: flex-end;
 }
 
+.foot-nav--list {
+  padding: 0;
+}
 .foot-nav--list li a {
   text-decoration: none;
   color: #000;
@@ -705,14 +708,32 @@ footer hr {
     height: -moz-fit-content;
     height: fit-content;
     margin-bottom: 0;
+    /*& .cards .card{
+        width;
+        width: -moz-fit-content;
+        width: fit-content;
+    }*/
   }
   #services .cards .card p {
     display: none;
+  }
+  #services .cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2.4rem;
   }
   #article {
     width: 100%;
     height: -moz-fit-content;
     height: fit-content;
     margin-top: 10px;
+  }
+  #article .cards {
+    margin-left: 10%;
+  }
+  #article .card {
+    width: 80%;
+    text-align: center;
+    align-items: center;
   }
 }/*# sourceMappingURL=style.css.map */

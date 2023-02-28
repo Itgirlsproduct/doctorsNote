@@ -594,6 +594,7 @@ footer hr {
 }
 .foot-nav--list {
     @extend %flex-column;
+    padding: 0;
 
     & li a {
         text-decoration: none;
@@ -775,6 +776,18 @@ footer hr {
         & .cards .card p{
             display: none;
         }
+
+        & .cards{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            grid-gap: 2.4rem;
+        }
+        
+        /*& .cards .card{
+            width;
+            width: -moz-fit-content;
+            width: fit-content;
+        }*/
     }
     
     #article {
@@ -783,6 +796,16 @@ footer hr {
         height: -moz-fit-content;
         height: fit-content;
         margin-top: 10px;
+
+        & .cards{
+            margin-left: 10%;
+        }
+
+        & .card{
+            width: 80%;
+            text-align: center;
+            align-items: center;
+        }
     }
 }
 }

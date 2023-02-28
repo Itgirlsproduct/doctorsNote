@@ -9,20 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const regExpName = /^([a-zа-яё]+[\s]{0,1}[a-zа-яё]+[\s]{0,1}[a-zа-яё]+)$/ig;
     const regExpEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const regExpPass = /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}\$/;   
-    const regExpPhone = /^(\+7|7|8)?[\s\-]?\(?[0-9]{3}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
 
-    
     const submit = () => {
         alert("Добро пожаловать!");
-    };
+    }
 
    
-
     const validateElem = (elem) => {
         if(elem.name === "name") {
             if(!regExpName.test(elem.value) && elem.value != "") {
                 elem.nextElementSibling.textContent = "Введите корректное имя пользователя!";
-                isValidate = false;
             } else {
                 elem.nextElementSibling.textContent = "";
                 isValidate = true;
@@ -37,21 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     isValidate = true;
                 }
         }
-
-        if(elem.name === "phone") {
-            if(!regExpPhone.test(elem.value) && elem.value != "") {
-                elem.nextElementSibling.textContent = "Введите телефон в формате +70000000000";
-                isValidate = false;
-            } else {
-                elem.nextElementSibling.textContent = "";
-                isValidate = true;
-            }
-    }
     
         if(elem.name === "password") {
                 if(!regExpPass.test(elem.value) && elem.value != "") {
                     elem.nextElementSibling.textContent = "Введите корректный пароль!";
-                   alert ('Внимание! Пароль должен содержать не менее 8 символов: заглавные и строчные латинские буквы, цифры и спецсимволы(!@#$&*)');
                     isValidate = false;
                 } else {
                     elem.nextElementSibling.textContent = "";
@@ -89,21 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 isValidate = true;
             }
         }
-
-      // if(elem.name === "select") {
-        // if(sel.options.value === "") {
-       //         elem.nextElementSibling.textContent = "Выберите специализацию!";
-       //       console.log(sel);
-       //        isValidate = false;
-       //     } else {
-      //        elem.nextElementSibling.textContent = "";
-       //        isValidate = true;
-       ///     }
-       // }
-       };
+        };
 
     for(let elem of form.elements) {
-        if(elem.tagName != 'BUTTON' && elem.tagName !='SELECT') 
+        if(!elem.classList.contains("input input-phone") && elem.tagName != 'BUTTON' && elem.tagName !='SELECT') 
         {
             elem.addEventListener('blur', () => {
                 validateElem(elem);
@@ -116,9 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault();
 
         for(let elem of form.elements) {
-           if (elem.tagName != 'BUTTON'&& elem.tagName !='SELECT') 
+            if(!elem.classList.contains("input input-phone") && elem.tagName != 'BUTTON' && elem.tagName !='SELECT') 
             {
-                if(elem.value === "") {
+                if(elem.value === '') {
                   elem.nextElementSibling.textContent = 'Данное поле не заполнено!';
                   isValidate = false;
                 } else {
@@ -126,15 +100,21 @@ document.addEventListener("DOMContentLoaded", () => {
                   isValidate = true;
                 }
             }
-       }
-       
+        }
     if(isValidate) {
+        //if(form.querySelector('.custom-dropdown big').value) {
         submit();
         form.reset();
     } else {
-        alert('Заполните все поля формы');
+        alert('Выберите специализацию');
     }
      
 
     });
 });
+
+      function isEmail(email) {
+        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+          email
+        );
+      }

@@ -1,44 +1,156 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito:600,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
 * {
   margin: 0;
   padding: 0;
 }
 
-.date {
-  background-color: #6C717B;
+ul {
+  list-style: none;
 }
 
-.container {
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: rgb(233, 233, 233);
+  font-family: "Poiret One", sans-serif;
+  font-weight: 800;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+body .container {
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
 }
-.container .createPatient {
-  background-color: rgb(153, 185, 236);
-  width: 95%;
+body .container .navbar {
+  padding-top: 2rem;
+  max-width: 1200px;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .container .logo {
+  width: 50px;
+  height: 50px;
+}
+body .container .nav-links {
+  display: flex;
+}
+body .container .nav-links li a {
+  color: #555555;
+  padding: 0 1.1rem;
+}
+body .container .nav-links li a:hover {
+  color: #000000;
+  font-weight: bold;
+}
+body .container #showcase {
+  max-width: 1200px;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .container #showcase .showcase-text {
+  display: flex;
+  height: 120px;
+  justify-content: space-around;
+  flex-direction: row;
+  margin: 5px;
+  padding: 5px;
+  align-items: center;
+}
+body .container #showcase .showcase-text .showcase-text_buttons {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-between;
+  padding: 6px;
+  margin: 7px;
+}
+body .container #showcase .showcase-text .showcase-text_buttons button {
+  width: 180px;
+  height: 45px;
+  border: 0.1rem solid #6588b9;
+  border-radius: 20px;
+  background-color: rgb(233, 233, 233);
+  cursor: pointer;
+  outline: none;
+  color: #6588b9;
+  font-weight: bold;
+}
+body .container #showcase .showcase-text .showcase-text_buttons button:hover {
+  background-color: #6588b9;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+body .container #showcase .showcase-text h1 {
+  font-size: 2rem;
+  width: 90%;
+  padding-bottom: 20px;
+}
+body .container #showcase .showcase-text p {
+  opacity: 0.9;
+  line-height: 1.5;
+  padding-right: 20px;
+}
+body .container #showcase .showcase-btn {
+  margin-top: 1.5rem;
+  margin: 25px;
+  height: 3.5rem;
+  padding-left: 10px;
+  border: none;
+  background-color: #458FF6;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 0.8rem 2rem;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+}
+body .container #showcase .showcase-btn:hover {
+  opacity: 0.9;
+}
+body .container .createPatient {
+  background-color: #91b4e1;
+  max-width: 1200px;
   padding: 20px;
   margin: 10px;
-  margin-top: 100px;
+  border-radius: 10px;
   height: 40px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  opacity: 90%;
+  box-shadow: 0 4px 16px rgb(186, 184, 184);
   justify-content: space-around;
 }
-.container .createPatient input[type=text] {
-  width: 200px;
+body .container .createPatient input[type=text] {
+  width: 180px;
   font-size: 1rem;
   color: #272523;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  transition: 0.3s;
 }
-.container #data-field {
+body .container #data-field {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.container #data-field .dataPatient {
-  background-color: rgb(191, 207, 232);
+body .container #data-field .dataPatient {
   width: 95%;
+  border-radius: 8px;
+  background-color: #b2c7e2;
+  box-shadow: 0 4px 16px rgb(186, 184, 184);
   padding: 20px;
   margin: 10px;
   height: 20px;
@@ -47,7 +159,7 @@
   justify-content: space-between;
   opacity: 85%;
 }
-.container #data-field .dataPatient li {
+body .container #data-field .dataPatient li {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -56,7 +168,7 @@
   display: flex;
   justify-content: space-between;
 }
-.container #data-field .dataPatient li i {
+body .container #data-field .dataPatient li i {
   color: #6C717B;
   font-size: 15px;
   cursor: pointer;

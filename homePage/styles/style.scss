@@ -2,23 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200&display=swap');
 
 
-$purple: #6588b9;
-$gold: #ecae02;
-$blue: #458ff6;
-$sky-blue: #5A98F2;
-$white: #fff;
-$grey: #555;
-$black: #000;
-
-%flex-column {
-    
-    display: flex;
-    flex-direction: column;
-}
-
 *{
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 body{
@@ -34,30 +19,24 @@ body{
 ul{
     list-style: none;
 }
-
-a{
-    text-decoration: none;
-    position: relative;
-
-    &:hover:after, &:focus:after {
-        width: 100%; 
-    }
-
-    &:after {
-        display: block;
+a:after {
+	display: block;
 	position: absolute;
 	left: 0; 
 	width: 0;
 	height: 2px; 
-	background-color: $gold; 
+	background-color: #ecae02; 
 	content: "";
-	transition: width 0.3s ease-out;
-    }
+	transition: width 0.3s ease-out; 
+}
 
-    .nav-links li &, .login-btn &{
-        color: $grey;
-        padding: 0 1.1rem;
-    }
+a:hover:after,
+a:focus:after {
+	width: 100%; 
+}
+a{
+    text-decoration: none;
+    position: relative;
 }
 
 .container{
@@ -78,25 +57,29 @@ a{
     width: 50px;
     height: 50px;
 }
-
 .nav-links{
     display: flex;
     
-    & li a:hover{
-        color: $black;
-        font-weight: bold;
-    }
-} 
+}
+
+.nav-links li a, .login-btn a{
+    color: #555;
+    padding: 0 1.1rem;
+}
+
+.nav-links li a:hover{
+    color: #000;
+    font-weight: bold;
+}
 
 .hamburger-menu{
     cursor: pointer;
     display: none;
-
-    & i {
-        color: $purple;
-    }
 }
 
+.hamburger-menu i{
+    color: #5A98F2;
+}
 .login-btn {
     width: 50%;
     margin-left: auto;
@@ -128,7 +111,7 @@ a{
      
     .iw-CSS-modal-inner {
     position: relative;
-    background: $white; 
+    background: #fff; 
     border: 1px solid #ccc; 
     border-radius: 0px; 
     }
@@ -140,7 +123,7 @@ a{
     }
     .iw-modal-title {
     font-size: 18px; 
-    color:$grey; 
+    color:#555; 
     font-weight:bold; 
     line-height: 1.5; 
     margin-top: 0;
@@ -152,11 +135,11 @@ a{
     top:15px; 
     right:10px; 
     font-size: 24px; 
-    color: $grey; 
+    color: #555; 
     text-decoration: none;
     }
     .iw-close:hover, .iw-close:focus {
-    color: $black; 
+    color: #000; 
     cursor: pointer;
     }
     /*CSS для блока с текстом*/
@@ -173,10 +156,10 @@ a{
         max-width: 370px;
         padding: 15px;
         margin: 20px auto;
-        background-color: $white;
-    }
+        background-color: #fff;
+      }
 
-    .input {
+      .input {
         display: block;
         width: 100%;
         padding: 8px 10px;
@@ -185,40 +168,35 @@ a{
         border-radius: 10px;
         font-family: inherit;
         font-size: 16px;
-    }
+      }
 
-    .app-btn {
+      .app-btn {
         display: block;
         width: 100%;
         padding: 8px 10px;
         margin: 2rem 0;
-        border: 0.1rem solid $blue;
+        border: 0.1rem solid #458ff6;
         border-radius: 20px;
-        background-color: $white;
+        background-color: #fff;
         cursor: pointer;
         outline: none;
-        color: $blue;
+        color: #458ff6;
         font-weight: bold;
         font-family: inherit;
         font-size: 16px;
-    }
+      }
 
-    .app-btn:hover {
-        background-color: $blue;
-        color: $white;
+      .app-btn:hover {
+        background-color: #458ff6;
+        color: #fff;
         transition: all 0.3s ease;
-    }
+      }
 
-    .log-in_error {
-        display: none;
-        color: #f30101;
-    }
-
-    #errorMessage,
-    #errorMessage-1 {
+      #errorMessage,
+      #errorMessage-1 {
         height: 1rem;
         color: red;
-    }
+      }
 .sidebar{
     display: none;
     position: fixed;
@@ -226,24 +204,24 @@ a{
     left: 0;
     height: 100%;
     width: 15rem;
-    background-color: $sky-blue;
+    background-color: #5A98F2;
     z-index: 1;
+}
 
-    & i{
-        color: $white;
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        cursor: pointer;
-    }
+.sidebar i{
+    color: #fff;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
 
-    & li a{
-        color: $white;
-        line-height: 7;
-        font-size: 1.1rem;
-        font-weight: bold;
-        padding: 0 1rem 0 0.5rem;
-    }
+.sidebar li a{
+    color: #fff;
+    line-height: 7;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0 1rem 0 0.5rem;
 }
 
 #showcase{
@@ -255,11 +233,12 @@ a{
 
 .showcase-text{
     width: 40vw;
+    //flex: 4;
+}
 
-    & h1{
-        font-size: 3rem;
-        width: 90%;
-    }
+.showcase-text h1{
+    font-size: 3rem;
+    width: 90%;
 }
 
 .intro-info{
@@ -275,32 +254,30 @@ a{
     margin-top: 1rem;
     height: 50px;
     border: none;
-    box-shadow: 0px 0px 4px 2px $gold;
-    background-color: $purple;
-    color: $white;
+    box-shadow: 0px 0px 4px 2px #ecae02;
+    background-color: #6588b9;
+    color: #fff;
     border-radius: 20px;
     padding: 0.8rem 2rem;
     font-weight: 700;
     outline: none;
     font-family: 'Montserrat Alternates', sans-serif;
     cursor: pointer;
+}
 
-    &:hover{
-        opacity: 0.9;
-    }
+.showcase-btn:hover{
+    opacity: 0.9;
 }
 
 .showcase-img{
     flex: 4;
+}
 
-    & img{
-        width: 90%;
-    }
+.showcase-img img{
+    width: 90%;
 }
 
 #services{
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
     height: fit-content;
     text-align: center;
 }
@@ -308,75 +285,135 @@ a{
 .service-header{
     text-align: center;
     padding: 0 10rem;
+}
 
-    & h1{
-        font-size: 2.1rem;
-        word-spacing: 4px;
-    }
-
-    & p{
-        opacity: 0.7;
-        line-height: 1.5;
-    }
+.service-header h1{
+    font-size: 2.1rem;
+    word-spacing: 4px;
 }
 
 hr{
     width: 4rem;
     height: 3px;
     font-weight: bold;
-    background-color: $black;
+    background-color: #000;
+}
+
+.service-header p{
+    opacity: 0.7;
+    line-height: 1.5;
 }
 
 #services .cards{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 2.4rem;
+}
+
+#services .cards h1{
+    text-align: center;
+}
+
+#services .cards{
     margin-top: 6rem;
+}
 
-    & h1{
-        text-align: center;
-    }
-    
-    & .card{
-        padding: 3rem 2rem;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
+#services .cards .card{
+    padding: 3rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
 
-        &:hover{
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            transform: scale(1.05);
-            overflow: hidden;
-            transition: 0.3s ease all;
-        }
-        
-        & h3{
-            font-size: 1.3rem;
-        }
-        
-        & p{
-            opacity: 0.6;
-        }
-    }
+#services .cards .card:hover{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+    overflow: hidden;
+    transition: 0.3s ease all;
+}
+
+#services .cards .card h3{
+    font-size: 1.3rem;
+}
+
+#services .cards .card p{
+    opacity: 0.6;
 }
 
 .service-btn{
     margin: 3rem 0;
     padding: 0.8rem 3rem;
-    border: 0.1rem solid $purple;
+    border: 0.1rem solid #6588b9;
     border-radius: 20px;
     background-color: rgb(233, 233, 233);
     cursor: pointer;
     outline: none;
-    color: $purple;
+    color: #6588b9;
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 700;
     font-size: 1.1rem;
+}
 
-    &:hover{
-        background-color: $purple;
-        color: $white;
-        transition: all 0.3s ease;
-    }
+.service-btn:hover{
+    background-color: #6588b9;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+#apps{
+    height: 100vh;
+}
+
+.app-1{
+    margin: 45rem 0 15rem 0;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+.app-1-left{
+    flex: 4;
+}
+
+.app-1-left img{
+    width: 100%;
+}
+
+.app-1-right{
+    flex: 3;
+    padding-left: 6rem;
+}
+
+.app-2{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+.app-2-left{
+    flex: 3;
+    padding-right: 6rem;
+}
+
+.app-2-right img{
+    width: 100%;
+}
+
+.app-btn{
+    margin: 3rem 0;
+    padding: 0.8rem 3rem;
+    border: 0.1rem solid #458FF6;
+    border-radius: 20px;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+    color: #458FF6;
+    font-weight: bold;
+}
+
+.app-btn:hover{
+    background-color: #458FF6;
+    color: #fff;
+    transition: all 0.3s ease;
 }
 
 #testimonials{
@@ -390,22 +427,22 @@ hr{
     text-align: center;
     max-width: 1100px;
     margin: auto;
-    background: linear-gradient(to left, #67C3F3, $sky-blue);
-    color: $white;
+    background: linear-gradient(to left, #67C3F3, #5A98F2);
+    color: #fff;
     padding: 3rem 2rem;
     border-radius: 20px;
+}
 
-    & hr{
-        width: 4rem;
-        height: 3px;
-        font-weight: bold;
-        background-color: $white;
-    }
-    
-    & h2{
-        font-size: 2rem;
-        word-spacing: 3px;
-    }
+.testimonial hr{
+    width: 4rem;
+    height: 3px;
+    font-weight: bold;
+    background-color: #fff;
+}
+
+.testimonial h2{
+    font-size: 2rem;
+    word-spacing: 3px;
 }
 
 .testimonial-person{
@@ -417,12 +454,6 @@ hr{
 .person{
     display: flex;
     flex: 1;
-
-    & img{
-        border-radius: 50%;
-        border: 3px solid $white;
-        margin-right: 2rem;
-    }
 }
 
 .person-text p{
@@ -430,29 +461,24 @@ hr{
     text-align: left;
 }
 
+.person img{
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-right: 2rem;
+}
+
 .testimonial-text{
     flex: 1;
     line-height: 1.5;
-
-    & p{
-        opacity: 0.9;
-        font-size: 1.05;
-    }
 }
 
+.testimonial-text p{
+    opacity: 0.9;
+    font-size: 1.05;
+}
 .testimonials .testimonial {
-    -webkit-animation-name: fade;
-            animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-            animation-duration: 1.5s;
-}
-@-webkit-keyframes fade {
-    from {
-        opacity: 0.4
-    }
-    to {
-        opacity: 1
-    }
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 @keyframes fade {
     from {
@@ -467,11 +493,10 @@ hr{
     justify-content: center;
     cursor: pointer;
     padding-top: 5px;
-    padding-left: 40px;
 }
 .previous-arrow, .next-arrow {
     width: 4rem;
-    color: $blue;
+    color: #458FF6;
 }
 .previous-arrow:hover:after, .next-arrow:hover:after,
 .previous-arrow:focus:after, .next-arrow:focus:after {
@@ -480,13 +505,11 @@ hr{
 
 #article{
     text-align: center;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
+    height: 100vh;
+}
 
-    & h1{
-        font-size: 2rem;
-    }
+#article h1{
+    font-size: 2rem;
 }
 
 .cards{
@@ -510,38 +533,37 @@ hr{
 .card-text{
     padding: 0 3rem 1rem 3rem;
     text-align: left;
-
-    & button{
-        background-color: transparent;
-        border: none;
-        color: $sky-blue;
-        font-weight: bold;
-        font-size: 1rem;
-        margin-top: 1rem;
-    }
-    
-    & i{
-        margin-left: 5px;
-    }
-    
-    & h1{
-        line-height: 1.5;
-    }
-    
-    & p{
-        line-height: 1.5;
-        opacity: 0.7;
-    }
 }
 
+.card-text button{
+    background-color: transparent;
+    border: none;
+    color: #5A98F2;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.card-text i{
+    margin-left: 5px;
+}
+
+.card-text h1{
+    line-height: 1.5;
+}
+
+.card-text p{
+    line-height: 1.5;
+    opacity: 0.7;
+}
 .article-btn {
-    color: $blue;
+    color: #458FF6;
 }
 #article .articleBtn{
     border: none;
-    background-color: $purple;
-    border: 1px solid $purple;
-    color: $white;
+    background-color: #6588b9;
+    border: 1px solid #6588b9;
+    color: #fff;
     border-radius: 20px;
     padding: 0.8rem 3rem;
     margin-top: 3rem;
@@ -550,13 +572,14 @@ hr{
     font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
-
-    &:hover{
-        background-color: $purple;
-        color: $white;
-        transition: all 0.3s ease;
-    }
 }
+
+#article .articleBtn:hover{
+    background-color: #6588b9;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
 
 .footer-container {
     display: flex;
@@ -588,20 +611,28 @@ footer hr {
     padding-bottom: 15px;
 }
 .footer-nav {
-    @extend %flex-column;
     width: 25%;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-end;
+   
 }
 .foot-nav--list {
-    @extend %flex-column;
-
-    & li a {
-        text-decoration: none;
-        color: $black;
-        }
+    display: flex;
+    flex-direction: column;
+}
+.foot-nav--list li a {
+    text-decoration: none;
+    color: #000;
+   
+}
+@media(max-width: 900px){
+    .app-1{
+        margin: 40rem 0 15rem 0;
+    }
 }
 
-@media screen and (max-width: 800px) {
+@media(max-width: 800px){
 
     .nav-links{
         display: none;
@@ -618,32 +649,29 @@ footer hr {
     }
 
     .showcase-text{
-        width: 100%;
         text-align: center;
         margin-right: 0rem;
         order: 2;
         padding: 0 2rem;
-
-        & h1{
-            font-size: 3rem;
-            width: 100%;
-        }
-        
-        & p{
-            width: 100%;
-            opacity: 0.9;
-            line-height: 1.5;
-            font-size: 1.1rem;
-        }
     }
 
     #showcase{
-        width: 100%;
         height: 90vh;
         display: flex;
         align-items: center;
-        justify-content: center;        
-    }    
+        justify-content: center;
+    }
+    
+    .showcase-text h1{
+        font-size: 3rem;
+        width: 100%;
+    }
+    
+    .showcase-text p{
+        width: 100%;
+        opacity: 0.9;
+        line-height: 1.5;
+    }
     
     .showcase-btn:hover{
         opacity: 0.9;
@@ -652,64 +680,70 @@ footer hr {
     .showcase-img{
         flex: 4;
         text-align: center;
-
-        & img{
-            width: 60%;
-        }
-    }    
+    }
+    
+    .showcase-img img{
+        width: 80%;
+    }
 
     #services{
-        height: -webkit-fit-content;
-        height: -moz-fit-content;
-        height: fit-content;
+        height: 100vh;
         text-align: center;
-        margin-top: 8rem;
+        margin-top: 10rem;
         margin-bottom: 25rem;
-
-        & .cards{
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            grid-gap: 2.4rem;
-        }
     }
 
     .service-header{
         padding: 0 2rem;
-    }    
+    }
+    
+    #services .cards{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 2.4rem;
+    }
+    
     .service-btn{
         margin: 3rem 0;
         padding: 0.8rem 3rem;
-        border: 0.1rem solid $blue;
+        border: 0.1rem solid #458FF6;
         border-radius: 20px;
-        background-color: $white;
+        background-color: #fff;
         cursor: pointer;
         outline: none;
-        color: $blue;
+        color: #458FF6;
         font-weight: bold;
+    }
+    
+    .service-btn:hover{
+        background-color: #458FF6;
+        color: #fff;
+        transition: all 0.3s ease;
+    }
 
-        &:hover{
-            background-color: $blue;
-            color: $white;
-            transition: all 0.3s ease;
-        }
-    }   
+    #apps{
+        height: 100vh;
+    }
+    
+    .app-1{
+        margin: 60rem 0 15rem 0;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+    }
 
     #testimonials{
         margin-top: 15rem;
-        height: -webkit-fit-content;
-        height: -moz-fit-content;
-        height: fit-content;
+        height: 80vh;
     }
     
     .testimonial{
         width: 100%;
-        height: 100%;
     }
     
     .testimonial-person{
         display: flex;
         flex-direction: column;
-        
         align-items: center;
         padding: 2rem;
     }
@@ -740,49 +774,20 @@ footer hr {
     #article .card-text{
         padding: 0 3rem 1rem 3rem;
         text-align: left;
-
-        & button {
+    }
+    
+    #article .card-text button{
         background-color: transparent;
         border: none;
-        color: $sky-blue;
+        color: #5A98F2;
         font-weight: bold;
         font-size: 1rem;
         margin-top: 1rem;
     }
-    }    
-
-@media screen and (max-width: 600px) {
-    .logo {
-        display: none;
-    }
-    .iw-CSS-modal-inner {
-        width: 360px;
-        margin-left: 20px;
-    }
-    .form {
-        width: 260px;
-    }
-
-    #testimonials {
-        display: none;
-    }
-    #services {
-        height: -webkit-fit-content;
-        height: -moz-fit-content;
-        height: fit-content;
-        margin-bottom: 0;
-
-        & .cards .card p{
-            display: none;
-        }
-    }
-    
-    #article {
-        width: 100%;
-        height: -webkit-fit-content;
-        height: -moz-fit-content;
-        height: fit-content;
-        margin-top: 10px;
-    }
 }
+
+@media(max-width: 600px){
+      .app-1{
+        margin: 80rem 0 15rem 0;
+    }
 }

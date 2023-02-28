@@ -3,17 +3,9 @@ const close = document.getElementById("close");
 const sidebar = document.getElementById("sidebar");
 const loginBtn = document.querySelector(".showcase-btn");
 const newsBtn = document.querySelector(".articleBtn");
-const loginEnterBtn = document.querySelector(".iw-modal-btn");
-const modalWindow = document.querySelector(".iw-modal");
-
-const userEmail = document.querySelector("#email");
-const userPas = document.querySelector("#password");
-const modalLoginBtn = document.querySelector("#log-btn");
-const modalRegBtn = document.querySelector("#reg-btn");
-const errorLogin = document.querySelector(".log-in_error");
 
 const openSidebar = () => {
-	sidebar.style.display = "block";
+	sidebar.style.display = "inline-block";
 };
 
 const closeSidebar = () => {
@@ -23,6 +15,25 @@ const closeSidebar = () => {
 // Event listeners
 open.addEventListener("click", openSidebar);
 close.addEventListener("click", closeSidebar);
+
+// Smooth scrolling
+/*$(document).ready(function () {
+	$("ul li a").on("click", function (event) {
+		if (this.hash !== "") {
+			event.preventDefault();
+			var hash = this.hash;
+			$("html, body").animate(
+				{
+					scrollTop: $(hash).offset().top,
+				},
+				600,
+				function () {
+					window.location.hash = hash;
+				}
+			);
+		}
+	});
+});*/
 
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -51,32 +62,3 @@ function showSlides(n) {
 	}
 	slides[slideIndex - 1].style.display = "block";
 }
-
-function storeData() {
-	localStorage.setItem("email", userEmail.value);
-	localStorage.setItem("passw", userPas.value);
-}
-function checkData() {
-	let storedEmail = localStorage.getItem("email");
-	let storedPass = localStorage.getItem("passw");
-
-	if (userEmail.value == storedEmail && userPas.value == storedPass) {
-		loginEnterBtn.textContent = "Выйти";
-		modalWindow.style.display = "none";
-	} else {
-		errorLogin.style.display = "block";
-	}
-}
-
-function userRegister() {
-	window.location.href = "./regForm/index.html";
-}
-
-function logOut() {
-	if (loginEnterBtn.innerHTML == "Выйти") {
-		window.location.reload();
-	}
-}
-modalRegBtn.addEventListener("click", userRegister);
-modalLoginBtn.addEventListener("click", checkData);
-loginEnterBtn.addEventListener("click", logOut);

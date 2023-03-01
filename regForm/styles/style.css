@@ -1,34 +1,17 @@
-/*# sourceMappingURL=style.css.map */
-
-@media(min-width:768px){
-    .app-1{
-        margin-left: 5rem;
-        margin-top: -3rem;
-    }
-    .app-1-right img{
-        display:flex;
-    }
+#ftr {
+  color: blue;
+  border: 3px solid #b641b0;
 }
-@media(max-width: 767px)and (min-width:375px){
-    .app-1{
-        margin-left: 10rem;
-    margin-top: -4rem;
-    }
-    .app-1-right img{
-        display:none;
-    }
+#ftr .sec1 {
+  padding-top: 10px;
 }
-@media (max-width: 375px) {
-    .app-1-right img{
-        display:none;
+#ftr .sec1 span {
+  color: red;
 }
-
-
-.app-1{
-    margin-left: 5rem;
-    margin-top: -3rem;
-    
+#ftr .pic {
+  margin: -5px;
 }
+<<<<<<< HEAD
 }
 .container{
     max-width: 1200px;
@@ -183,3 +166,8 @@ body{
   }
 
   
+=======
+#ftr .pic:hover {
+  color: green;
+}/*# sourceMappingURL=style.css.map */
+>>>>>>> master

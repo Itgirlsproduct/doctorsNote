@@ -1,47 +1,168 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:600,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+$var1: #555555;
+$var2: #000000;
+$var3: #5A98F2;
+$var4: #ffffff;
+$var5: #458FF6;
 * {
     margin: 0;
     padding: 0;
 }
-.date {
-    background-color: #6C717B;
+ul {
+	list-style: none;
 }
-.container{
+
+a {
+	text-decoration: none;
+}
+
+body{
+    background-color:rgb(233, 233, 233);
+    font-family: 'Poiret One', sans-serif;
+	font-weight: 800;
+	font-size: 1.2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .container{
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     
-
-   
+    .navbar {
+        padding-top: 2rem;
+        max-width: 1200px;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .nav-links {
+        display: flex;
+    
+        li a {
+            color: $var1;
+            padding: 0 1.1rem;
+    
+            &:hover {
+                color: $var2;
+                font-weight: bold;
+            }
+        }
+    }
+    #showcase{
+        max-width: 1200px;
+        height: 20vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .showcase-text {
+            display: flex;
+            height: 120px;
+            justify-content: space-around;
+            flex-direction: row;
+            margin: 5px;
+            padding: 5px;
+            align-items: center;
+        .showcase-text_buttons{
+            display: flex;
+            flex-direction: column;
+            height: 100px;
+            justify-content: space-between;
+            padding: 6px;
+            margin: 7px;
+            button {
+                width: 180px;
+        height: 45px;
+        border: 0.1rem solid  #6588b9;
+        border-radius: 20px;
+        background-color: rgb(233, 233, 233);
+        cursor: pointer;
+        outline: none;
+        color:  #6588b9;
+        font-weight: bold;
+    
+        &:hover {
+            background-color:  #6588b9;
+            color: $var4;
+            transition: all 0.3s ease;
+        }
+            }
+        }
+        
+            h1 {
+                font-size: 2rem;
+                width: 90%;
+                padding-bottom: 20px;
+            }
+        
+            p {
+               // width: 90%;
+                opacity: 0.9;
+                line-height: 1.5;
+                padding-right: 20px;
+            }
+        }
+        .showcase-btn {
+            margin-top: 1.5rem;
+            margin: 25px;
+            height: 3.5rem;
+            padding-left: 10px;
+            border: none;
+            background-color: $var5;
+            color: $var4;
+            border-radius: 20px;
+            padding: 0.8rem 2rem;
+            font-weight: bold;
+            outline: none;
+            cursor: pointer;
+        
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+    }
     .createPatient{ //ввод данных пациента
-        background-color: rgb(153, 185, 236);
-        width: 95%;
+        background-color: #91b4e1;
+        max-width: 1200px;
         padding: 20px;
         margin: 10px;
-        margin-top: 100px;
+        border-radius: 10px;
         height: 40px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        opacity: 90%;
+        box-shadow: 0 4px 16px  rgb(186, 184, 184);
         justify-content: space-around;
+        
         input[type=text] {
-            width: 200px;
-            //padding: 0 5px;
-            //font-weight: 700;
+            width: 180px;//
             font-size: 1rem;
             color: #272523;
-          } 
-    }
+        border:none;
+        border-radius: 3px;
+        outline: none;
+        transition: 0.3s;
+        } 
+        }
     #data-field{
         margin-top: 10px;
         display: flex;
-        flex-direction:column;
+    flex-direction:column;
         justify-content: space-around; 
         flex-wrap: wrap;
         .dataPatient{
-      
-        background-color: rgb(191, 207, 232);
         width: 95%;
+        border-radius: 8px;
+        background-color: #b2c7e2;
+        box-shadow: 0 4px 16px  rgb(186, 184, 184);
         padding: 20px;
         margin: 10px;
         height: 20px;
@@ -49,21 +170,65 @@
         flex-direction: row;
         justify-content: space-between;
         opacity: 85%;
-       
-        li {
+    li {
             user-select: none;
             margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
-          }
-        
-          li i {
+        }
+        li i {
             color: #6C717B;
             font-size: 15px;
             cursor: pointer;
             padding: 5px 10px;
-          }
+        }
         
     }
 }
+
 }
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+footer hr {
+    width: 100%;
+    height: 0px;
+    border: 1px solid #d0d0d0;
+}
+.footer-social {
+    display: flex;
+    width: 25%;
+    align-items: flex-end;
+    
+}
+.foot-socials {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding-left: 0;
+}
+.footer-rights {
+    display: flex;
+    width: 35%;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 15px;
+}
+.footer-nav {
+    //@extend %flex-column;
+    width: 25%;
+    justify-content: flex-end;
+}
+.foot-nav--list {
+   // @extend %flex-column;
+
+    & li a {
+        text-decoration: none;
+        color: black;
+        }
+}
+
+}
+

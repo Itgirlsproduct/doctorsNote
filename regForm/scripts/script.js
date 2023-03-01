@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let isValidate = true;
 
     const regExpName =
-      /^([a-zа-яё]+[\s]{0,1}[a-zа-яё]+[\s]{0,1}[a-zа-яё]+)$/gi;
+    /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u
     const regExpEmail =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const regExpPass =
@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const regExpPhone =
       /^(\+7|7|8)?[\s\-]?\(?[0-9]{3}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
 
+    
     const submit = () => {
       alert("Добро пожаловать!");
     };
@@ -29,63 +30,67 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("passw", yourPass.value);
     });
 
+    const formState = {
+        name: true,
+        email: true,
+        phone: true,
+        password: true,
+        password2: true
+    };
+
     const validateElem = (elem) => {
       if (elem.name === "name") {
         if (!regExpName.test(elem.value) && elem.value != "") {
           elem.nextElementSibling.textContent =
             "Введите корректное имя пользователя!";
-          isValidate = false;
+          formState[elem.name] = false;
         } else {
           elem.nextElementSibling.textContent = "";
-          // isValidate = true;
+          formState[elem.name] = true;
         }
       }
       if (elem.name === "email") {
         if (!regExpEmail.test(elem.value) && elem.value != "") {
           elem.nextElementSibling.textContent = "Введите корректный email!";
-          isValidate = false;
+          formState[elem.name] = false;
         } else {
           elem.nextElementSibling.textContent = "";
-          //   isValidate = true;
+          formState[elem.name] = true;
         }
       }
 
       if (elem.name === "phone") {
         if (!regExpPhone.test(elem.value) && elem.value != "") {
           elem.nextElementSibling.textContent =
-            "Введите телефон в формате +70000000000";
-          isValidate = false;
+            "Введите телефон в формате +7 000-000-00-00";
+          formState[elem.name] = false;
         } else {
           elem.nextElementSibling.textContent = "";
-          //  isValidate = true;
+          formState[elem.name] = true;
         }
       }
 
       if (elem.name === "password") {
         if (!regExpPass.test(elem.value) && elem.value != "") {
-          elem.nextElementSibling.textContent =
-            "Введите корректный пароль!";
-          alert(
+          elem.nextElementSibling.textContent = "Пароль не соответствует "
+         alert(
             "Внимание! Пароль должен содержать не менее 8 символов: заглавные и строчные латинские буквы, цифры и спецсимволы(!@#$&*)"
           );
+          formState[elem.name] = false;
         } else {
           elem.nextElementSibling.textContent = "";
+          formState[elem.name] = true;
         }
       }
       if (elem.name === "password") {
         if (pass.value != pass2.value && pass2.value != "") {
           pass.nextElementSibling.textContent = "Пароли не совпадают!";
           pass2.nextElementSibling.textContent = "Пароли не совпадают!";
+          formState[elem.name] = false;
         } else {
           pass.nextElementSibling.textContent = "";
           pass2.nextElementSibling.textContent = "";
-        }
-
-        if (!regExpPass.test(elem.value) && elem.value != "") {
-          elem.nextElementSibling.textContent =
-            "Введите корректный пароль!";
-        } else {
-          elem.nextElementSibling.textContent = "";
+          formState[elem.name] = true;
         }
       }
 
@@ -93,9 +98,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (pass.value != pass2.value && pass2.value != "") {
           pass.nextElementSibling.textContent = "Пароли не совпадают!";
           pass2.nextElementSibling.textContent = "Пароли не совпадают!";
+          formState[elem.name] = false;
         } else {
           pass.nextElementSibling.textContent = "";
           pass2.nextElementSibling.textContent = "";
+          formState[elem.name] = true;
         }
       }
     };
@@ -110,21 +117,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     register.addEventListener("click", function (event) {
       event.preventDefault();
+      let isValidateForm = true;
 
       for (let elem of form.elements) {
+        if(formState[elem.name]==="") {
+            isValidateForm = false;
+        }
         if (elem.tagName != "BUTTON" && elem.tagName != "SELECT") {
           if (elem.value === "") {
+            isValidateForm = false;
             elem.nextElementSibling.textContent =
               "Данное поле не заполнено!";
-            isValidate = false;
           } else {
             elem.nextElementSibling.textContent = "";
-            isValidate = true;
           }
         }
       }
 
-      if (isValidate) {
+      if (isValidateForm) {
         submit();
         form.reset();
       } else {

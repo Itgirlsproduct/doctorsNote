@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const regExpPhone =
       /^(\+7|7|8)?[\s\-]?\(?[0-9]{3}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
 
+    
     const submit = () => {
       alert("Добро пожаловать!");
     };

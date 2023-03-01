@@ -2,14 +2,8 @@
   color: blue;
   border: 3px solid #b641b0;
 }
-@media(max-width: 767px)and (min-width:375px){
-    .app-1{
-        margin-left: 10rem;
-    margin-top: -4rem;
-    }
-    .app-1-right img{
-        display:none;
-    }
+#ftr .sec1 {
+  padding-top: 10px;
 }
 #ftr .sec1 span {
   color: red;
@@ -35,7 +29,6 @@ body{
     margin: 0;
     overflow-x: hidden;
     position: relative;
-    background-color:rgb(233, 233, 233);
 }
 
   
@@ -129,7 +122,7 @@ body{
     max-width: 370px;
     padding: 15px;
     margin: 20px auto;
-    background-color: rgb(233, 233, 233);
+    background-color: #fff;
   }
 
   .input {

@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (elem.name === "password") {
-        if (!regExpPass.test(elem.value) && elem.value != "") {
+        if (!regExpPass.test(elem.value) && elem.value !== "") {
           elem.nextElementSibling.textContent = 
           "Пароль не соответствует ";
           formState[elem.name] = false;
@@ -84,18 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
           formState[elem.name] = true;
         }
       }
-      if (elem.name === "password") {
-        if (pass.value != pass2.value && pass2.value != "") {
-          pass.nextElementSibling.textContent = "Пароли не совпадают!";
-          pass2.nextElementSibling.textContent = "Пароли не совпадают!";
-          formState[elem.name] = false;
-        } else {
-          pass.nextElementSibling.textContent = "";
-          pass2.nextElementSibling.textContent = "";
-          formState[elem.name] = true;
-        }
-      }
 
+    
       if (elem.name === "password2") {
         if (pass.value != pass2.value && pass2.value != "") {
           pass.nextElementSibling.textContent = "Пароли не совпадают!";

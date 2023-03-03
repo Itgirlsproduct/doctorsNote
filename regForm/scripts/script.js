@@ -21,6 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Добро пожаловать!");
     };
 
+    function doctorsPage(){
+      window.location.href = "https://itgirlsproduct.github.io/doctorsNote/createPatient/index.html";
+    }
+
     const yourEmail = document.querySelector(".input-email");
     const yourPass = document.querySelector(".input-password");
 
@@ -71,11 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (elem.name === "password") {
         if (!regExpPass.test(elem.value) && elem.value != "") {
-          elem.nextElementSibling.textContent = "Пароль не соответствует "
-         alert(
-            "Внимание! Пароль должен содержать не менее 8 символов: заглавные и строчные латинские буквы, цифры и спецсимволы(!@#$&*)"
-          );
+          elem.nextElementSibling.textContent = 
+          "Пароль не соответствует ";
           formState[elem.name] = false;
+          console.log(elem.nextElementSibling.textContent);
         } else {
           elem.nextElementSibling.textContent = "";
           formState[elem.name] = true;
@@ -135,6 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (isValidateForm) {
         submit();
+        doctorsPage();
         form.reset();
       } else {
         alert("Заполните все поля формы");
